@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Bitcoin News Site</title>
+  </head>
+  <body>
+    <h1>Welcome to my second website!</h1>
+    <p>This site is all about Bitcoin news.</p>
+  </body>
+</html>
