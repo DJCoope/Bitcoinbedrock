@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Bitcoinbedrock</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f2a900, #ff6200);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 12px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .back-button::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        /* Sections */
+        .section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff3e0;
+        }
+        .section h2 {
+            color: #ff6200;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Content Blocks */
+        .content-block {
+            margin-bottom: 30px;
+        }
+        .content-block h3 {
+            color: #f2a900;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .content-block h3::before {
+            content: attr(data-icon);
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        .content-block p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .section h2 { font-size: 1.5rem; }
+            .content-block h3 { font-size: 1.3rem; }
+            .back-button { font-size: 0.9rem; padding: 6px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <a href="index.html" class="back-button">Back to Home</a>
+        <h1>About Bitcoinbedrock</h1>
+        <p>Discover our passion for making Bitcoin education fun and accessible!</p>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+        <h2>Who We Are</h2>
+        <div class="content-block">
+            <h3 data-icon="🔎">Mission Statement</h3>
+            <p>Our mission is to make learning about Bitcoin fun, simple, and safe for kids aged 8–12.</p>
+        </div>
+        <div class="content-block">
+            <h3 data-icon="🧠">Target Audience</h3>
+            <p>Designed for curious kids, supportive parents, and dedicated educators.</p>
+        </div>
+        <div class="content-block">
+            <h3 data-icon="📚">What We Offer</h3>
+            <p>We offer interactive lessons, downloadable activities, and fun quizzes to help young learners understand the basics of digital money.</p>
+        </div>
+        <div class="content-block">
+            <h3 data-icon="💡">What Makes Us Unique</h3>
+            <p>Unlike other Bitcoin resources, we explain complex ideas in kid-friendly language using colorful visuals and real-world examples.</p>
+        </div>
+    </section>
+</body>
+</html>
