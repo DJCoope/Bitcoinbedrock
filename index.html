@@ -6,6 +6,8 @@
     <title>Bitcoinbedrock.org</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN for search icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         /* Custom styles for kid-friendly design with Bitcoin colors */
         body {
@@ -26,6 +28,11 @@
         .hero {
             background: linear-gradient(180deg, #F7931A 0%, #FFFFFF 100%); /* Gradient for hero */
         }
+        .search-icon:hover {
+            color: #FF9900; /* Lighter Bitcoin orange on hover */
+            transform: scale(1.1);
+            transition: transform 0.2s;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -33,11 +40,12 @@
     <header class="hero text-white p-6 md:p-12">
         <nav class="container mx-auto flex justify-between items-center mb-8">
             <h1 class="text-2xl md:text-3xl font-bold">Bitcoinbedrock.org</h1>
-            <div class="space-x-4 text-white">
+            <div class="space-x-4 text-white flex items-center">
                 <a href="#posts" class="hover:underline">Posts</a>
                 <a href="#categories" class="hover:underline">Categories</a>
                 <a href="#tags" class="hover:underline">Tags</a>
                 <a href="#about" class="hover:underline">About</a>
+                <a href="#search" class="search-icon"><i class="fas fa-search"></i></a>
             </div>
         </nav>
         <div class="container mx-auto text-center">
@@ -61,6 +69,6 @@
     <footer class="bitcoin-orange text-white p-4 text-center mt-auto">
         <p>© 2025 Bitcoinbedrock. All rights reserved.</p>
     </footer>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95e807224c6441e2',t:'MTc1MjQwMTgxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95e80e43c96c41e2',t:'MTc1MjQwMjExMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
 
