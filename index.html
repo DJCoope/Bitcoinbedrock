@@ -1,121 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bitcoinbedrock</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #333;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: #fff;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .navbar .site-title {
-      font-weight: bold;
-      font-size: 1.2rem;
-      color: #555;
-    }
-
-    .navbar nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-
-    .navbar nav a:hover {
-      text-decoration: underline;
-    }
-
-    .hero {
-      background-color: #000;
-      color: white;
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-    }
-
-    .hero .btn {
-      background: none;
-      color: white;
-      border: 2px solid white;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .hero .btn:hover {
-      background: white;
-      color: black;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoinbedrock.org</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for kid-friendly design with Bitcoin colors */
+        body {
+            font-family: 'Open Sans', 'Comic Sans MS', 'Arial', sans-serif;
+            background-color: #f5f5f5; /* Light gray background */
+        }
+        .bitcoin-orange {
+            background-color: #F7931A; /* Bitcoin orange */
+        }
+        .bitcoin-gray {
+            color: #4D4D4D; /* Bitcoin gray */
+        }
+        .btn-hover:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s;
+            background-color: #FF9900; /* Lighter Bitcoin orange on hover */
+        }
+        .hero {
+            background: linear-gradient(180deg, #F7931A 0%, #FFFFFF 100%); /* Gradient for hero */
+        }
+    </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col">
+    <!-- Header / Hero Section -->
+    <header class="hero text-white p-6 md:p-12">
+        <nav class="container mx-auto flex justify-between items-center mb-8">
+            <h1 class="text-2xl md:text-3xl font-bold">Bitcoinbedrock.org</h1>
+            <div class="space-x-4 text-white">
+                <a href="#posts" class="hover:underline">Posts</a>
+                <a href="#categories" class="hover:underline">Categories</a>
+                <a href="#tags" class="hover:underline">Tags</a>
+                <a href="#about" class="hover:underline">About</a>
+            </div>
+        </nav>
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold bitcoin-gray mb-4">Welcome to Bitcoinbedrock</h2>
+            <p class="text-xl md:text-2xl bitcoin-gray mb-6">Bitcoin basics for the next generation.</p>
+            <a href="#about" class="bitcoin-orange text-white font-bold py-3 px-8 rounded-full btn-hover transition">Get Started</a>
+        </div>
+    </header>
 
-  <!-- Navigation Bar -->
-  <header class="navbar">
-  <div class="site-title" style="display: flex; align-items: center;">
-    <span style="font-weight: bold; font-size: 1.2rem; color: #555;">Bitcoinbedrock.org</span>
-  </div>
+    <!-- About Section -->
+    <section id="about" class="container mx-auto py-12 px-4">
+        <h3 class="text-2xl md:text-3xl font-bold bitcoin-gray text-center mb-6">About Bitcoinbedrock</h3>
+        <p class="text-lg bitcoin-gray text-center max-w-3xl mx-auto">
+            Bitcoinbedrock is an educational platform built to empower bright young minds with the basics of Bitcoin.
+            Designed for curious kids aged 8–12, it makes digital money simple, fun, and safe to explore.
+            Here, children discover the power of Bitcoin — one block at a time — through playful lessons, stories, and interactive activities. The aim is to provide simple lessons, solid foundations for strong futures.
+        </p>
+    </section>
 
-  <nav>
-  <a href="#">Posts</a>
-  <a href="#">Categories</a>
-  <a href="#">Tags</a>
-  <a href="#">About</a>
-  <!-- Search Icon -->
-  <a href="#" title="Search" style="display: inline-flex; align-items: center; margin-left: 10px;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
-      <circle cx="11" cy="11" r="8"></circle>
-      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-    </svg>
-  </a>
-</nav>
-
-</header>
-
-  <!-- Hero Section -->
-  <section class="hero" style="display: flex; align-items: center; justify-content: center; gap: 40px; padding: 60px 20px;">
-  <img src="images/logo-dark.png" alt="Bitcoinbedrock logo" style="height: 200px;" />
-
-  <div>
-    <h1>Welcome to Bitcoinbedrock</h1>
-    <p>Bitcoin basics for the next generation.</p>
-    <button class="btn">Get Started</button>
-  </div>
-</section>
-
-<!-- Intro Paragraph Section -->
-<section class="intro">
-  <div style="font-size: 0.95rem; max-width: 700px; margin: 0 auto 1.5rem auto; text-align: center;">
-    <p>
-      <strong>Bitcoinbedrock</strong> is an educational platform built to empower bright young minds with the basics of Bitcoin.
-      Designed for curious kids aged 8–12, it makes digital money simple, fun, and safe to explore.
-      Here, children discover the power of Bitcoin — one block at a time — through playful lessons, stories, and interactive activities. The aim is to provide simple lessons, solid foundations for strong futures. 
-    </p>
-  </div>
-</section>
-
-</body>
+    <!-- Footer -->
+    <footer class="bitcoin-orange text-white p-4 text-center mt-auto">
+        <p>© 2025 Bitcoinbedrock. All rights reserved.</p>
+    </footer>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95e807224c6441e2',t:'MTc1MjQwMTgxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
