@@ -18,6 +18,7 @@
             color: white;
             text-align: center;
             padding: 80px 20px;
+            position: relative;
         }
         .hero h1 {
             font-size: 3rem;
@@ -27,6 +28,34 @@
         .hero p {
             font-size: 1.2rem;
             margin: 10px 0;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 12px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .back-button::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>') no-repeat center;
+            background-size: contain;
         }
 
         /* Sections */
@@ -79,12 +108,14 @@
             .hero p { font-size: 1rem; }
             .section h2 { font-size: 1.5rem; }
             .section h2 span { font-size: 1.2rem; }
+            .back-button { font-size: 0.9rem; padding: 6px 10px; }
         }
     </style>
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
+        <a href="index.html" class="back-button">Back to Home</a>
         <h1>Bitcoinbedrock Resources</h1>
         <p>Explore fun and educational resources for everyone to learn about Bitcoin!</p>
     </section>
