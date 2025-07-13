@@ -1,46 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resources | Bitcoinbedrock</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <style>
-    .bitcoin-orange {
-      background-color: #F7931A;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Bitcoinbedrock</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f2a900, #ff6200);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        /* Sections */
+        .section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .section h2 {
+            color: #f2a900;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section h2 span {
+            margin-left: 10px;
+            font-size: 1.5rem;
+        }
+
+        /* Custom Bullet Points with Bitcoin Logo */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 24px;
+            height: 24px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg') no-repeat center;
+            background-size: contain;
+        }
+
+        /* Section Styling */
+        .kids, .teachers { background-color: #ffedd5; }
+        .parents { background-color: #ffffff; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .section h2 { font-size: 1.5rem; }
+            .section h2 span { font-size: 1.2rem; }
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Bitcoinbedrock Resources</h1>
+        <p>Explore fun and educational resources for everyone to learn about Bitcoin!</p>
+    </section>
 
-  <!-- Header -->
-  <header class="bitcoin-orange text-white p-6">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="index.html" class="text-2xl font-bold">Bitcoinbedrock</a>
-      <nav class="space-x-4 text-lg">
-        <a href="index.html#about" class="hover:underline">About</a>
-        <a href="posts.html" class="hover:underline">Posts</a>
-        <a href="resources.html" class="underline">Resources</a>
-      </nav>
-    </div>
-  </header>
+    <!-- For Kids Section -->
+    <section class="section kids">
+        <h2>For Kids <span>👧</span></h2>
+        <ul>
+            <li>Interactive Bitcoin Treasure Hunt: A fun game to learn about Bitcoin basics.</li>
+            <li>Colorful Bitcoin Storybook: A simple guide to how Bitcoin works.</li>
+            <li>Crypto Craft Kit: Create your own paper Bitcoin wallet!</li>
+        </ul>
+    </section>
 
-  <!-- Hero -->
-  <section class="bg-gradient-to-r from-[#F7931A] to-orange-300 py-12 text-white text-center">
-    <h1 class="text-4xl font-bold mb-4">🔍 Explore Our Resources</h1>
-    <p class="text-xl">Fun tools, guides, and printables for kids, parents, and teachers!</p>
-  </section>
+    <!-- For Parents Section -->
+    <section class="section parents">
+        <h2>For Parents <span>👨‍👩‍👧</span></h2>
+        <ul>
+            <li>Bitcoin 101 Guide: Understand the basics of cryptocurrency for your family.</li>
+            <li>Family Budgeting with Bitcoin: Tips to teach kids about digital money.</li>
+            <li>Safe Crypto Practices: How to keep your Bitcoin secure.</li>
+        </ul>
+    </section>
 
-  <!-- Kids Section -->
-  <section class="bg-white py-10 px-6 md:px-16">
-    <h2 class="text-3xl font-bold text-[#F7931A] mb-6 text-center">🧒 For Kids</h2>
-    <ul class="space-y-4 text-lg max-w-3xl mx-auto">
-      <li class="flex items-center">
-        <img src="images/bitcoin-logo.png" alt="Bitcoin icon" class="h-6 w-6 mr-2">
-        <a href="coloring-page.pdf" class="underline text-blue-600">Bitcoin Coloring Page</a>
-      </li>
-      <li class="flex items-center">
-        <img src="images/bitcoin-logo.png" alt="Bitcoin icon" class="h-6 w-6 mr-2">
-        <a href="block-builder-game.html" class="underline tex
-
+    <!-- For Teachers Section -->
+    <section class="section teachers">
+        <h2>For Teachers <span>👩‍🏫</span></h2>
+        <ul>
+            <li>Classroom Bitcoin Curriculum: Lesson plans for teaching digital currency.</li>
+            <li>Bitcoin History Timeline: Visual aids for economic lessons.</li>
+            <li>Student Quiz Pack: Test knowledge with fun Bitcoin-themed quizzes.</li>
+        </ul>
+    </section>
+</body>
+</html>
