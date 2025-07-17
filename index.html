@@ -61,14 +61,46 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="container mx-auto py-12 px-4">
-        <h3 class="text-2xl md:text-3xl font-bold bitcoin-gray text-center mb-6">About Bitcoinbedrock</h3>
-        <p class="text-lg bitcoin-gray text-center max-w-3xl mx-auto">
+<section id="about" class="container mx-auto py-12 px-4">
+    <h3 class="text-2xl md:text-3xl font-bold bitcoin-gray text-center mb-6">About Bitcoinbedrock</h3>
+    <div class="flex flex-col md:flex-row md:items-start gap-6 max-w-4xl mx-auto">
+        <p class="text-lg bitcoin-gray text-center md:text-left max-w-3xl">
             Bitcoinbedrock is an educational platform built to empower bright young minds with the basics of Bitcoin.
             Designed for curious kids aged 8–12, it makes digital money simple, fun, and safe to explore.
             Here, children discover the power of Bitcoin — one block at a time — through playful lessons, stories, and interactive activities. The aim is to provide simple lessons, solid foundations for strong futures.
         </p>
-    </section>
+        <div class="bitcoin-clock bg-gray-900 border-4 border-orange-500 rounded-lg p-6 max-w-sm mx-auto md:mx-0 text-center animate-bounce-in">
+            <h2 class="text-2xl font-bold text-orange-500 mb-2">🪙 Bitcoin Block Clock</h2>
+            <p class="text-lg text-white">Current Block: <span id="block-height" class="text-3xl font-extrabold text-white bg-orange-500 px-4 py-2 rounded inline-block">Loading...</span></p>
+        </div>
+    </div>
+
+    <style>
+        @keyframes bounce-in {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        .animate-bounce-in {
+            animation: bounce-in 0.5s ease-out;
+        }
+    </style>
+
+    <script>
+        async function fetchBitcoinBlockHeight() {
+            try {
+                const response = await fetch('https://blockchain.info/q/getblockcount');
+                const blockHeight = await response.text();
+                document.getElementById('block-height').textContent = blockHeight;
+            } catch (error) {
+                document.getElementById('block-height').textContent = 'Oops! Try again!';
+                console.error('Error:', error);
+            }
+        }
+        fetchBitcoinBlockHeight();
+        setInterval(fetchBitcoinBlockHeight, 600000);
+    </script>
+</section>
 
     <!-- Feature Row Section -->
 <section class="container mx-auto py-12 px-4">
