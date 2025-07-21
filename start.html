@@ -80,27 +80,28 @@
             flex: 1;
             padding-right: 20px;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-        ul li {
-            position: relative;
-            padding-left: 40px;
-            margin-bottom: 15px;
+        .modules button {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 10px;
             font-size: 1.1rem;
             line-height: 1.5;
+            background-color: #ffe0b2; /* Lighter orange shade */
+            border: 2px solid #f2a900;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            position: relative;
+            transition: background-color 0.3s, border-color 0.3s;
         }
-        ul li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 2px;
-            width: 24px;
-            height: 24px;
-            background: url('https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg') no-repeat center;
-            background-size: contain;
+        .modules button:hover {
+            background-color: #ffd699; /* Slightly darker orange on hover */
+            color: #333;
+            border-color: #ff6200;
+        }
+        .modules button span {
+            margin-left: 15px; /* Adjusted for no icon */
         }
 
         /* Image Styling */
@@ -123,6 +124,7 @@
                 align-items: center;
             }
             .modules { padding-right: 0; }
+            .modules button { width: auto; }
             .section img { margin-left: 0; margin-top: 20px; max-width: 100%; }
         }
     </style>
@@ -139,14 +141,12 @@
     <section class="section">
         <div class="modules">
             <h3>Our Lesson Modules</h3>
-            <ul>
-                <li>📘 Module 1: What is Money?</li>
-                <li>🪙 Module 2: What is Bitcoin?</li>
-                <li>⚡ Module 3: How Bitcoin Works</li>
-                <li>🌍 Module 4: Why Bitcoin Matters</li>
-            </ul>
+            <button><span>📘 Module 1: What is Money?</span></button>
+            <button><span>🪙 Module 2: What is Bitcoin?</span></button>
+            <button><span>⚡ Module 3: How Bitcoin Works</span></button>
+            <button><span>🌍 Module 4: Why Bitcoin Matters</span></button>
         </div>
-        <img src="bitcoin-whitepaper.jpg" alt="Bitcoin White Paper for 8-12 Year Olds">
+        <img src="bitcoin-whitepaper.jpg" alt="Bitcoin White Paper for 8-12 Year Olds"> <!-- Replace "bitcoin-whitepaper.jpg" with the correct image path or URL -->
     </section>
 </body>
 </html>
