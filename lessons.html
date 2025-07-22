@@ -80,28 +80,28 @@
             flex: 1;
             padding-right: 20px;
         }
-        .modules button {
+        .modules a {
             display: block;
             width: 100%;
             padding: 10px 15px;
             margin-bottom: 10px;
             font-size: 1.1rem;
             line-height: 1.5;
-            background-color: #ffe0b2; /* Lighter orange shade */
+            background-color: #ffe0b2;
             border: 2px solid #f2a900;
             border-radius: 5px;
-            cursor: pointer;
+            text-decoration: none;
+            color: #333;
             text-align: left;
             position: relative;
             transition: background-color 0.3s, border-color 0.3s;
         }
-        .modules button:hover {
-            background-color: #ffd699; /* Slightly darker orange on hover */
-            color: #333;
+        .modules a:hover {
+            background-color: #ffd699;
             border-color: #ff6200;
         }
-        .modules button span {
-            margin-left: 15px; /* Adjusted for no icon */
+        .modules a span {
+            margin-left: 15px;
         }
 
         /* Image Styling */
@@ -124,7 +124,7 @@
                 align-items: center;
             }
             .modules { padding-right: 0; }
-            .modules button { width: auto; }
+            .modules a { width: auto; }
             .section img { margin-left: 0; margin-top: 20px; max-width: 100%; }
         }
     </style>
@@ -141,12 +141,12 @@
     <section class="section">
         <div class="modules">
             <h3>Our Lesson Modules</h3>
-            <button><span>📘 Module 1: What is Money?</span></button>
-            <button><span>🪙 Module 2: What is Bitcoin?</span></button>
-            <button><span>⚡ Module 3: How Bitcoin Works</span></button>
-            <button><span>🌍 Module 4: Why Bitcoin Matters</span></button>
+            <a href="module1.html"><span>📘 Module 1: What is Money?</span></a>
+            <a href="module2.html"><span>🪙 Module 2: What is Bitcoin?</span></a>
+            <a href="module3.html"><span>⚡ Module 3: How Bitcoin Works</span></a>
+            <a href="module4.html"><span>🌍 Module 4: Why Bitcoin Matters</span></a>
         </div>
-        <img src="images/logo-scroll.png" alt="Bitcoin White Paper for 8-12 Year Olds"> <!-- Replace "bitcoin-whitepaper.jpg" with the correct image path or URL -->
+        <img src="images/logo-scroll.png" alt="Bitcoin White Paper for 8-12 Year Olds">
     </section>
 </body>
 </html>
