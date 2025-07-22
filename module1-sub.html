@@ -1,159 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitcoinbedrock</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Comic Sans MS', 'Arial', sans-serif;
-            background-color: #fff3e0;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 1 - What is Money?</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', 'Arial', sans-serif;
+      background-color: #fff3e0;
+      color: #333;
+      padding: 0;
+    }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #f2a900, #ff6200);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .hero h1 {
-            font-size: 2.8rem;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        .hero p {
-            font-size: 1.2rem;
-            margin: 10px 0;
-        }
+    .hero {
+      background: linear-gradient(135deg, #f2a900, #ff6200);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+    }
 
-        /* Back Button */
-        .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            display: inline-flex;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 8px 12px;
-            background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .back-button:hover {
-            background-color: rgba(0, 0, 0, 0.4);
-            transform: scale(1.1);
-        }
-        .back-button::before {
-            content: '';
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            margin-right: 8px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>') no-repeat center;
-            background-size: contain;
-        }
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.3s ease;
+    }
 
-        /* Sections */
-        .section {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-            background-color: #ffedd5;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-        .section h3 {
-            color: #f2a900;
-            font-size: 2rem;
-            text-align: left;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
+    .back-button:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 
-        /* Modules List */
-        .modules {
-            flex: 1;
-            padding-right: 20px;
-        }
-        .modules a {
-            display: block;
-            width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-            background-color: #ffe0b2;
-            border: 3px solid #f2a900;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #333;
-            text-align: left;
-            position: relative;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .modules a:hover {
-            background-color: #ffd699;
-            border-color: #ff6200;
-            transform: scale(1.05);
-        }
-        .modules a span {
-            margin-left: 15px;
-        }
+    .content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #ffedd5;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-        /* Image Styling */
-        .section img {
-            max-width: 400px;
-            width: 100%;
-            height: auto;
-            flex: 1;
-            margin-left: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        }
+    .content h2 {
+      color: #f2a900;
+      margin-bottom: 20px;
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1rem; }
-            .section h3 { font-size: 1.5rem; }
-            .back-button { font-size: 0.9rem; padding: 6px 10px; }
-            .section {
-                flex-direction: column;
-                align-items: center;
-            }
-            .modules { padding-right: 0; }
-            .modules a { width: auto; }
-            .section img { margin-left: 0; margin-top: 20px; max-width: 100%; }
-        }
-    </style>
+    .content p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .fun-fact {
+      background-color: #ffe0b2;
+      padding: 10px 15px;
+      border-left: 6px solid #ff6200;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <a href="index.html" class="back-button">Back to Home</a>
-        <h1>🏞️ The Bitcoin Journey Begins!</h1>
-        <p>Learn about Bitcoin with fun and engaging lessons for all ages!</p>
-    </section “
+  <section class="hero">
+    <a href="start.html" class="back-button">← Back to Lessons</a>
+    <h1>📘 What is Money?</h1>
+    <p>Let’s explore where money came from and why it’s important!</p>
+  </section>
 
-    <!-- Modules Section -->
-    <section class="section">
-        <div class="modules">
-            <h3>Our Lesson Modules</h3>
-            <a href="module1-sub.html"><span>📘 Module 1: What is Money?</span></a>
-            <a href="module2.html"><span>🪙 Module 2: What is Bitcoin?</span></a>
-            <a href="module3.html"><span>⚡ Module 3: How Bitcoin Works</span></a>
-            <a href="module4.html"><span>🌍 Module 4: Why Bitcoin Matters</span></a>
-        </div>
-        <img src="images/logo-scroll.png" alt="Bitcoin White Paper for 8-12 Year Olds">
-    </section>
+  <section class="content">
+    <h2>Money: A Super Helpful Tool</h2>
+    <p>Before money, people used to trade things directly. This was called <strong>barter</strong>. For example, you might trade a banana for a sandwich. But what if the other person didn’t want a banana?</p>
+
+    <p>That’s where money came in. People needed something everyone agreed was valuable, easy to carry, and could be used to trade for anything.</p>
+
+    <div class="fun-fact">💡 Fun Fact: The first "money" was often salt, shells, or shiny stones!</div>
+
+    <h2>What Makes Good Money?</h2>
+    <p>Good money should be:</p>
+    <ul>
+      <li>🧮 Easy to count</li>
+      <li>👜 Easy to carry</li>
+      <li>👶 Last a long time</li>
+      <li>🌍 Accepted by many people</li>
+    </ul>
+
+    <p>Later, people started using gold and silver. Then came paper money. And now... digital money like Bitcoin!</p>
+
+    <div class="fun-fact">💡 Can you imagine using candy or marbles as money? Some kids did that on playgrounds!</div>
+
+    <p>Next, we'll discover how Bitcoin is a new kind of money. But first, make sure you understand why we needed money in the first place!</p>
+  </section>
 </body>
 </html>
