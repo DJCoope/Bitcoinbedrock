@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lessons - Bitcoinbedrock</title>
+    <title>Bitcoinbedrock</title>
     <style>
         body {
             margin: 0;
@@ -64,43 +64,68 @@
             max-width: 1000px;
             margin: 0 auto;
             background-color: #ffedd5;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
         }
-        .section h2 {
+        .section h3 {
             color: #f2a900;
             font-size: 2rem;
-            text-align: center;
+            text-align: left;
             margin-bottom: 20px;
         }
 
-        /* Custom Bullet Points with Bitcoin Logo */
-        ul {
-            list-style: none;
-            padding: 0;
+        /* Modules List */
+        .modules {
+            flex: 1;
+            padding-right: 20px;
         }
-        ul li {
-            position: relative;
-            padding-left: 40px;
-            margin-bottom: 15px;
+        .modules button {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 10px;
             font-size: 1.1rem;
             line-height: 1.5;
+            background-color: #ffe0b2; /* Lighter orange shade */
+            border: 2px solid #f2a900;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            position: relative;
+            transition: background-color 0.3s, border-color 0.3s;
         }
-        ul li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 2px;
-            width: 24px;
-            height: 24px;
-            background: url('https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg') no-repeat center;
-            background-size: contain;
+        .modules button:hover {
+            background-color: #ffd699; /* Slightly darker orange on hover */
+            color: #333;
+            border-color: #ff6200;
+        }
+        .modules button span {
+            margin-left: 15px; /* Adjusted for no icon */
+        }
+
+        /* Image Styling */
+        .section img {
+            max-width: 800px;
+            width: 100%;
+            height: auto;
+            flex: 1;
+            margin-left: 20px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .hero p { font-size: 1rem; }
-            .section h2 { font-size: 1.5rem; }
+            .section h3 { font-size: 1.5rem; }
             .back-button { font-size: 0.9rem; padding: 6px 10px; }
+            .section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .modules { padding-right: 0; }
+            .modules button { width: auto; }
+            .section img { margin-left: 0; margin-top: 20px; max-width: 100%; }
         }
     </style>
 </head>
@@ -108,19 +133,20 @@
     <!-- Hero Section -->
     <section class="hero">
         <a href="index.html" class="back-button">Back to Home</a>
-        <h1>Bitcoinbedrock Lessons</h1>
+        <h1>🏞️ The Bitcoin Journey Begins!</h1>
         <p>Learn about Bitcoin with fun and engaging lessons for all ages!</p>
     </section>
 
-    <!-- Lessons Section -->
+    <!-- Modules Section -->
     <section class="section">
-        <h2>Our Lesson Plans</h2>
-        <ul>
-            <li>Introduction to Bitcoin: Discover what Bitcoin is and how it works.</li>
-            <li>Blockchain Basics: Explore the technology behind Bitcoin.</li>
-            <li>Bitcoin in Everyday Life: Learn how Bitcoin can be used in real-world scenarios.</li>
-            <li>History of Money: Understand Bitcoin's place in the evolution of currency.</li>
-        </ul>
+        <div class="modules">
+            <h3>Our Lesson Modules</h3>
+            <button><span>📘 Module 1: What is Money?</span></button>
+            <button><span>🪙 Module 2: What is Bitcoin?</span></button>
+            <button><span>⚡ Module 3: How Bitcoin Works</span></button>
+            <button><span>🌍 Module 4: Why Bitcoin Matters</span></button>
+        </div>
+        <img src="images/logo-scroll.png" alt="Bitcoin White Paper for 8-12 Year Olds"> <!-- Replace "bitcoin-whitepaper.jpg" with the correct image path or URL -->
     </section>
 </body>
 </html>
