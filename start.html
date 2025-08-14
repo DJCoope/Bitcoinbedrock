@@ -256,6 +256,8 @@
             font-size: 20px;
         }
     </style>
+    <!-- Add Puter.js for AI functionality -->
+    <script src="https://js.puter.com/v2/"></script>
 </head>
 <body>
     <!-- Hero Section -->
@@ -313,8 +315,8 @@
             }
         }
 
-        // Function to send user message and simulate AI response (replace with real API call)
-        function sendMessage() {
+        // Function to send user message and get AI response
+        async function sendMessage() {
             const input = document.getElementById('userInput');
             const chatBody = document.getElementById('chatBody');
             const userText = input.value.trim();
@@ -330,41 +332,34 @@
             // Clear input
             input.value = '';
 
-            // Simulate AI response (replace this with actual API integration)
-            setTimeout(() => {
-                const agentMsg = document.createElement('div');
-                agentMsg.classList.add('message', 'agent-message');
-                agentMsg.textContent = getAIResponse(userText); // Placeholder function
-                chatBody.appendChild(agentMsg);
-                chatBody.scrollTop = chatBody.scrollHeight; // Scroll to bottom
-            }, 1000); // Simulate delay
+            // Add a loading indicator
+            const loadingMsg = document.createElement('div');
+            loadingMsg.classList.add('message', 'agent-message');
+            loadingMsg.textContent = 'Thinking...';
+            chatBody.appendChild(loadingMsg);
+
+            try {
+                const aiText = await getAIResponse(userText);
+                loadingMsg.textContent = aiText; // Replace loading with response
+            } catch {
+                loadingMsg.textContent = 'Sorry, something went wrong. Try again!';
+            }
+
+            chatBody.scrollTop = chatBody.scrollHeight; // Scroll to bottom
         }
 
-        // Placeholder function for AI response - Integrate with xAI API here
-        function getAIResponse(userQuery) {
-            // This is a dummy response. In a real setup:
-            // Use fetch() to call an AI API endpoint, e.g., xAI's Grok API.
-            // For xAI API details and access, visit https://x.ai/api.
-            // Example structure (pseudocode):
-            /*
-            fetch('https://api.x.ai/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Authorization': 'Bearer YOUR_API_KEY',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    model: 'grok',
-                    messages: [{ role: 'user', content: userQuery }]
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Return data.choices[0].message.content;
-            });
-            */
-            // For now, return a static response tuned for Bitcoin tutoring
-            return `That's a great question about Bitcoin! Let me explain: ${userQuery}. (This is a placeholder - integrate a real AI API for dynamic responses.)`;
+        // Function to get AI response using Puter.js
+        async function getAIResponse(userQuery) {
+            try {
+                const response = await puter.ai.chat(userQuery, {
+                    model: 'gpt-4.1-nano', // Free model; check https://developer.puter.com for others
+                    system: 'You are Boulder, a fun and friendly CoinCoach for kids aged 8-12 learning about Bitcoin on Bitcoinbedrock.org. Explain concepts simply, use engaging language, keep responses short and educational, and encourage questions.'
+                });
+                return response.message.content[0].text || 'Oops, I didn’t get that right—ask me again!';
+            } catch (error) {
+                console.error('Puter.js Error:', error);
+                return 'Sorry, I’m having trouble connecting. Try again later!';
+            }
         }
 
         // Handle Enter key for sending message
