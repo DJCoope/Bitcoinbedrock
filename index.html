@@ -13,7 +13,6 @@
         body {
             font-family: 'Open Sans', 'Comic Sans MS', 'Arial', sans-serif;
             background-color: #f5f5f5; /* Light gray background */
-            position: relative; /* Added for animation positioning */
         }
         .bitcoin-orange {
             background-color: #F7931A; /* Bitcoin orange */
@@ -46,20 +45,6 @@
         }
         .search-icon {
             color: #8B4513; /* Match the earthy brown for search icon */
-        }
-        /* Boulder Animation Styles */
-        .boulder {
-            position: absolute;
-            bottom: 20px;
-            left: -200px; /* Start off-screen */
-            width: 150px; /* Adjust based on your image size */
-            height: 200px; /* Adjust based on your image size */
-            background: url('images/agent-profile.png') no-repeat center; /* Replace with your Boulder image URL */
-            animation: walkAcross 8s linear infinite;
-        }
-        @keyframes walkAcross {
-            0% { left: -200px; }
-            100% { left: 100vw; }
         }
     </style>
 </head>
@@ -99,14 +84,48 @@
         </div>
     </section>
 
+    <!-- Feature Row Section -->
+    <section class="container mx-auto py-12 px-4">
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <!-- Feature 1 -->
+            <div class="bg-white shadow-md rounded-xl p-6">
+                <h4 class="text-xl font-bold mb-3">🧠 Learn the Basics</h4>
+                <p class="mb-4 text-gray-700">
+                    Learn: What is money, What is Bitcoin
+                </p>
+                <a href="#learn-the-basics" class="bitcoin-orange hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full">
+                    Start Learning
+                </a>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-white shadow-md rounded-xl p-6">
+                <h4 class="text-xl font-bold mb-3">🎯 Interactive Activities</h4>
+                <p class="mb-4 text-gray-700">
+                    Quizzes, puzzles, and printable worksheets.
+                </p>
+                <a href="#interactive" class="bitcoin-orange hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full">
+                    Play
+                </a>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-white shadow-md rounded-xl p-6">
+                <h4 class="text-xl font-bold mb-3">👨‍👩‍👧 For Grown-Ups</h4>
+                <p class="mb-4 text-gray-700">
+                    Parent & teacher guides, tips, and FAQs.
+                </p>
+                <a href="#grownups" class="bitcoin-orange hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full">
+                    View Resources
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bitcoin-orange text-white p-4 text-center mt-auto">
         <p>© 2025 Bitcoinbedrock. All rights reserved.</p>
     </footer>
-
-    <!-- Boulder Animation -->
-    <div class="boulder"></div>
-
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95e80e43c96c41e2',t:'MTc1MjQwMjExMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
