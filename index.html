@@ -12,39 +12,69 @@
         /* Custom styles for kid-friendly design with Bitcoin colors */
         body {
             font-family: 'Open Sans', 'Comic Sans MS', 'Arial', sans-serif;
-            background-color: #f5f5f5; /* Light gray background */
+            background-color: #f5f5f5;
+            overflow-x: hidden;
         }
-        .bitcoin-orange {
-            background-color: #F7931A; /* Bitcoin orange */
-        }
-        .bitcoin-gray {
-            color: #4D4D4D; /* Bitcoin gray */
-        }
+        .bitcoin-orange { background-color: #F7931A; }
+        .bitcoin-gray { color: #4D4D4D; }
         .btn-hover:hover {
             transform: scale(1.05);
             transition: transform 0.2s;
-            background-color: #FF9900; /* Lighter Bitcoin orange on hover */
+            background-color: #FF9900;
         }
         .hero {
-            background: linear-gradient(180deg, #F7931A 0%, #FFFFFF 100%); /* Gradient for hero */
+            background: linear-gradient(180deg, #F7931A 0%, #FFFFFF 100%);
         }
         .search-icon:hover {
-            color: #FF9900; /* Lighter Bitcoin orange on hover */
+            color: #FF9900;
             transform: scale(1.1);
             transition: transform 0.2s;
         }
-        h1 {
-            color: #8B4513; /* Warm brown to match the logo's earthy tone */
+        h1 { color: #8B4513; }
+        nav a { color: #8B4513; }
+        nav a:hover { color: #8B4513; text-decoration: underline; }
+        .search-icon { color: #8B4513; }
+
+        /* Boulder animation styles */
+        .boulder-container {
+            position: fixed;
+            bottom: -200px;
+            right: -200px;
+            z-index: 1000;
         }
-        nav a {
-            color: #8B4513; /* Match the earthy brown for navigation links */
+        .boulder-character {
+            width: 150px;
         }
-        nav a:hover {
-            color: #8B4513; /* Keep hover effect consistent */
-            text-decoration: underline;
+        @keyframes bounce {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+            100% { transform: translateY(0) rotate(-2deg); }
         }
-        .search-icon {
-            color: #8B4513; /* Match the earthy brown for search icon */
+        @keyframes walkIn {
+            0% { bottom: -200px; right: -200px; }
+            100% { bottom: 50px; right: 50%; transform: translateX(50%); }
+        }
+        .speech-bubble {
+            position: absolute;
+            top: -60px;
+            left: -40px;
+            background: white;
+            border: 3px solid #F7931A;
+            border-radius: 10px;
+            padding: 10px 15px;
+            font-size: 14px;
+            color: #4D4D4D;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 20px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
         }
     </style>
 </head>
@@ -72,60 +102,62 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="container mx-auto py-12 px-4">
-        <h3 class="text-2xl md:text-3xl font-bold bitcoin-gray text-center mb-6">About Bitcoinbedrock</h3>
-        <div class="flex flex-col gap-6 max-w-4xl mx-auto items-center">
-            <p class="text-lg bitcoin-gray text-center md:text-left max-w-3xl">
-                Bitcoinbedrock is an educational platform built to empower bright young minds with the basics of Bitcoin.
-                Designed for curious kids aged 8–12, it makes digital money simple, fun, and safe to explore.
-                Here, children discover the power of Bitcoin — one block at a time — through playful lessons, stories, and interactive activities.
-            </p>
-            <a href="start.html" class="bitcoin-orange text-white font-bold py-3 px-8 rounded-full btn-hover transition">Get Started</a>
-        </div>
+    <section id="about" class="container mx-auto py-12 px-4 text-center">
+        <h3 class="text-2xl md:text-3xl font-bold bitcoin-gray mb-6">About Bitcoinbedrock</h3>
+        <p class="text-lg bitcoin-gray max-w-3xl mx-auto mb-6">
+            Bitcoinbedrock is an educational platform built to empower bright young minds with the basics of Bitcoin.
+            Designed for curious kids aged 8–12, it makes digital money simple, fun, and safe to explore.
+            Here, children discover the power of Bitcoin — one block at a time — through playful lessons, stories, and interactive activities.
+        </p>
+        <a href="start.html" class="bitcoin-orange text-white font-bold py-3 px-8 rounded-full btn-hover transition">Get Started</a>
     </section>
 
-    <!-- Feature Row Section -->
-    <section class="container mx-auto py-12 px-4">
-        <div class="grid md:grid-cols-3 gap-8 text-center">
-            <!-- Feature 1 -->
-            <div class="bg-white shadow-md rounded-xl p-6">
-                <h4 class="text-xl font-bold mb-3">🧠 Learn the Basics</h4>
-                <p class="mb-4 text-gray-700">
-                    Learn: What is money, What is Bitcoin
-                </p>
-                <a href="#learn-the-basics" class="bitcoin-orange hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full">
-                    Start Learning
-                </a>
-            </div>
-
-            <!-- Feature 2 -->
-            <div class="bg-white shadow-md rounded-xl p-6">
-                <h4 class="text-xl font-bold mb-3">🎯 Interactive Activities</h4>
-                <p class="mb-4 text-gray-700">
-                    Quizzes, puzzles, and printable worksheets.
-                </p>
-                <a href="#interactive" class="bitcoin-orange hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full">
-                    Play
-                </a>
-            </div>
-
-            <!-- Feature 3 -->
-            <div class="bg-white shadow-md rounded-xl p-6">
-                <h4 class="text-xl font-bold mb-3">👨‍👩‍👧 For Grown-Ups</h4>
-                <p class="mb-4 text-gray-700">
-                    Parent & teacher guides, tips, and FAQs.
-                </p>
-                <a href="#grownups" class="bitcoin-orange hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full">
-                    View Resources
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- Boulder Animation -->
+    <div class="boulder-container" id="boulder">
+        <img src="images/boulder.png" alt="Boulder the Coincoach" class="boulder-character" id="boulder-img">
+        <div class="speech-bubble" id="bubble">Welcome to the future of finance</div>
+    </div>
 
     <!-- Footer -->
     <footer class="bitcoin-orange text-white p-4 text-center mt-auto">
         <p>© 2025 Bitcoinbedrock. All rights reserved.</p>
     </footer>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95e80e43c96c41e2',t:'MTc1MjQwMjExMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+
+    <script>
+    function startBoulderAnimation() {
+        const boulder = document.getElementById('boulder');
+        const boulderImg = document.getElementById('boulder-img');
+        const bubble = document.getElementById('bubble');
+
+        // Reset positions and hide bubble
+        boulder.style.bottom = '-200px';
+        boulder.style.right = '-200px';
+        boulderImg.style.animation = '';
+        bubble.style.opacity = '0';
+        bubble.style.transform = 'scale(0.8)';
+
+        // Start walking in
+        setTimeout(() => {
+            boulder.style.animation = 'walkIn 4s ease-out forwards';
+            boulderImg.style.animation = 'bounce 0.5s infinite alternate';
+        }, 100);
+
+        // Show speech bubble
+        setTimeout(() => {
+            bubble.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
+            bubble.style.opacity = '1';
+            bubble.style.transform = 'scale(1)';
+        }, 4100);
+
+        // Hide speech bubble
+        setTimeout(() => {
+            bubble.style.opacity = '0';
+            bubble.style.transform = 'scale(0.8)';
+        }, 8000);
+    }
+
+    // Run animation on page load
+    window.addEventListener('load', startBoulderAnimation);
+    </script>
 </body>
 </html>
