@@ -144,20 +144,29 @@ function startBoulderAnimation() {
     bubble.style.transform = 'scale(0.8)';
     boulderImg.style.animation = '';
 
+    // Boulder enters
     setTimeout(() => {
         boulder.style.transition = 'right 1s ease-out';
         boulder.style.right = '100px';
         boulderImg.style.animation = 'bounce 0.5s infinite alternate';
     }, 100);
 
+    // Bubble appears
     setTimeout(() => {
         bubble.style.opacity = '1';
         bubble.style.transform = 'scale(1)';
     }, 1200);
 
+    // Bubble disappears
     setTimeout(() => {
         bubble.style.opacity = '0';
         bubble.style.transform = 'scale(0.8)';
+    }, 5000);
+
+    // Boulder exits
+    setTimeout(() => {
+        boulder.style.transition = 'right 1s ease-in';
+        boulder.style.right = '-200px';
     }, 5000);
 }
 
