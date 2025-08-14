@@ -137,6 +137,9 @@ function startBoulderAnimation() {
     const boulderImg = document.getElementById('boulder-img');
     const bubble = document.getElementById('bubble');
 
+    // Set bubble text to match website style
+    bubble.textContent = "Simple lessons. Solid foundations. Strong futures.";
+
     // Reset styles
     boulder.style.transition = 'none';
     boulder.style.right = '-200px';
@@ -157,20 +160,17 @@ function startBoulderAnimation() {
         bubble.style.transform = 'scale(1)';
     }, 1200);
 
-    // Bubble disappears
+    // Start bubble fade slightly before exit
     setTimeout(() => {
+        // Slow fade and boulder exit together
+        boulder.style.transition = 'right 2s ease-in';
+        bubble.style.transition = 'opacity 2s ease-in, transform 2s ease-in';
+        boulder.style.right = '-300px';
         bubble.style.opacity = '0';
         bubble.style.transform = 'scale(0.8)';
-    }, 5000);
-
-    // Boulder exits
-    setTimeout(() => {
-        boulder.style.transition = 'right 1s ease-in';
-        boulder.style.right = '-200px';
-    }, 5000);
+    }, 4800); // starts slightly before the previous 5000ms mark
 }
 
+// Trigger the animation when the page loads
 window.addEventListener('load', startBoulderAnimation);
 </script>
-</body>
-</html>
