@@ -89,6 +89,9 @@
             border-radius: 10px;
             padding: 15px;
             transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
         .sub-module:hover {
             background-color: #ffd699;
@@ -105,6 +108,14 @@
             font-size: 1rem;
             color: #333;
         }
+        .sub-module img {
+            width: 100px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .sub-module-content {
+            flex: 1;
+        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -114,6 +125,7 @@
             .back-button { font-size: 0.9rem; padding: 6px 10px; }
             .sub-module h3 { font-size: 1.3rem; }
             .sub-module p { font-size: 0.9rem; }
+            .sub-module img { width: 80px; }
         }
     </style>
 </head>
@@ -130,12 +142,18 @@
         <h2>Sub-Modules</h2>
         <div class="sub-modules">
             <a href="text.module1.html" class="sub-module" style="text-decoration: none;">
-                <h3>The Origins of Money</h3>
-                <p>Learn how people started using money to trade and how it changed over time.</p>
+                <div class="sub-module-content">
+                    <h3>The Origins of Money</h3>
+                    <p>Learn how people started using money to trade and how it changed over time.</p>
+                </div>
+                <img src="shells.jpg" alt="Shells used as early money">
             </a>
             <div class="sub-module">
-                <h3>The Attributes of a Good Store of Value</h3>
-                <p>Discover what makes money valuable and why some things work better than others.</p>
+                <div class="sub-module-content">
+                    <h3>The Attributes of a Good Store of Value</h3>
+                    <p>Discover what makes money valuable and why some things work better than others.</p>
+                </div>
+                <img src="coins.jpg" alt="Coins as a store of value">
             </div>
             <div class="sub-module">
                 <h3>The Evolution of Money</h3>
