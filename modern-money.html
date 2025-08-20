@@ -172,8 +172,8 @@
             display: none; /* Hidden until JavaScript or form logic is added */
         }
 
-        /* Back to Sub-Modules Button */
-        .back-to-modules-button {
+                /* Next Lesson Button */
+        .next-lesson-button {
             position: fixed;
             bottom: 30px;
             right: 30px;
@@ -189,6 +189,11 @@
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
+        .next-lesson-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
@@ -202,7 +207,7 @@
             .quiz p { font-size: 1rem; }
             .quiz-question h4 { font-size: 1.2rem; }
             .quiz-question label { font-size: 0.9rem; }
-            .back-to-modules-button { font-size: 1rem; padding: 12px 20px; bottom: 20px; right: 20px; }
+            .next-lesson-button { font-size: 1rem; padding: 12px 20px; bottom: 20px; right: 20px; }
         }
     </style>
 </head>
@@ -262,7 +267,7 @@
         </div>
     </section>
 
-     <!-- Back to Module Button -->
-    <a href="module1.1.html" class="back to sub-modules">Back to Sub-Modules →</a>
+     <!-- Next Lesson Button -->
+    <a href="modern-money.html" class="next-lesson-button">Next Lesson →</a>
 </body>
 </html>
