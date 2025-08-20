@@ -172,6 +172,28 @@
             display: none; /* Hidden until JavaScript or form logic is added */
         }
 
+        /* Next Lesson Button */
+        .next-lesson-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #f2a900, #ff6200);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            animation: bounce 2s infinite;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .next-lesson-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
@@ -185,6 +207,7 @@
             .quiz p { font-size: 1rem; }
             .quiz-question h4 { font-size: 1.2rem; }
             .quiz-question label { font-size: 0.9rem; }
+            .next-lesson-button { font-size: 1rem; padding: 12px 20px; bottom: 20px; right: 20px; }
         }
     </style>
 </head>
