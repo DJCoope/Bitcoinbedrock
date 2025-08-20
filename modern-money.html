@@ -172,6 +172,23 @@
             display: none; /* Hidden until JavaScript or form logic is added */
         }
 
+        /* Back to Sub-Modules Button */
+        .back-to-modules-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #f2a900, #ff6200);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            animation: bounce 2s infinite;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
@@ -185,13 +202,14 @@
             .quiz p { font-size: 1rem; }
             .quiz-question h4 { font-size: 1.2rem; }
             .quiz-question label { font-size: 0.9rem; }
+            .back-to-modules-button { font-size: 1rem; padding: 12px 20px; bottom: 20px; right: 20px; }
         }
     </style>
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
-        <a href="module1.html" class="back-button">Back to Module</a>
+        <a href="module1.1.html" class="back-button">Back to Module</a>
         <h1>📖 Let’s Learn About Modern Money!</h1>
         <p>Long ago, people didn’t have coins or bills. They traded things like food, tools, or animals. But trading wasn’t always easy!</p>
     </section>
@@ -243,5 +261,8 @@
             <div class="quiz-feedback">[Feedback for Question 3]</div>
         </div>
     </section>
+
+     <!-- Back to Module Button -->
+    <a href="module1.1.html" class="back to sub-modules">Back to Sub-Modules →</a>
 </body>
 </html>
