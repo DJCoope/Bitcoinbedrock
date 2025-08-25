@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoinbedrock - The Evolution of Money</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            background-color: #fff3e0;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f2a900, #ff6200);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 12px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+            transform: scale(1.1);
+        }
+        .back-button::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        /* Back to Sub-Modules Button */
+        .back-to-sub-modules-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #f2a900, #ff6200);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            animation: bounce 2s infinite;
+            transition: transform 0.2s, box-shadow 0.2s;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .back-to-sub-modules-button.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .back-to-sub-modules-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Stages Section */
+        .stages-section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffedd5;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .stages-section h2 {
+            color: #f2a900;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Stage Item */
+        .stage-item {
+            max-width: 400px;
+            background-color: #ffe0b2;
+            border: 3px solid #f2a900;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .stage-item.right {
+            margin-left: auto;
+        }
+        .stage-item:hover {
+            background-color: #ffd699;
+            border-color: #ff6200;
+            transform: scale(1.02);
+        }
+        .stage-item h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 0 0 10px 0;
+        }
+        .stage-item p {
+            margin: 0;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Stage Container for Image and Text Box */
+        .stage-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+        .stage-container.right {
+            justify-content: flex-end;
+        }
+        .stage-container.right .stage-item {
+            order: 1;
+        }
+        .stage-container.right img {
+            order: 0;
+        }
+        .stage-container img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Arrow Styling */
+        .arrow {
+            text-align: center;
+            font-size: 2rem;
+            color: #f2a900;
+            margin: 20px 0;
+        }
+        .arrow img {
+            width: 40px;
+            height: auto;
+            transform: rotate(90deg);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .stages-section h2 { font-size: 1.5rem; }
+            .back-button { font-size: 0.9rem; padding: 6px 10px; }
+            .stage-container { flex-direction: column; align-items: flex-start; }
+            .stage-container.right { flex-direction: column; align-items: flex-start; }
+            .stage-container.right .stage-item { order: 0; }
+            .stage-container.right img { order: 1; }
+            .stage-item { max-width: 100%; }
+            .stage-item.right { margin-left: 0; }
+            .stage-item h3 { font-size: 1.3rem; }
+            .stage-item p { font-size: 0.9rem; }
+            .stage-container img { max-width: 120px; }
+            .arrow img { width: 30px; }
+            .back-to-sub-modules-button { font-size: 1rem; padding: 12px 20px; bottom: 20px; right: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <a href="index.html" class="back-button">Back to Module</a>
+        <h1>💡 How Something Becomes Real Money</h1>
+        <p>Before something becomes real money, it grows in 4 steps — like building a big LEGO castle brick by brick.</p>
+    </section>
+
+    <!-- Stages Section -->
+    <section class="stages-section">
+        <h2>🧱 Money Grows in Stages</h2>
+        <div class="stage-container">
+            <div class="stage-item">
+                <h3>🧸 1. Collectible Stage – “It’s Just Cool!”</h3>
+                <p>People like it because it’s shiny, rare, or fun to own.<br><strong>Example:</strong> Shells, beads, and gold started out this way.<br>Think of it like collecting Pokémon cards or marbles. At personally, they’re just cool to have!</p>
+            </div>
+            <img src="images/stage1.png" alt="Collectible items like shells or beads">
+        </div>
+        <div class="arrow">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f2a900'><path d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/></svg>" alt="Arrow">
+        </div>
+        <div class="stage-container right">
+            <img src="images/stage2.png" alt="Piggy bank or stored wealth">
+            <div class="stage-item right">
+                <h3>💰 2. Store of Value – “I Can Save This for Later!”</h3>
+                <p>Once lots of people want it, it becomes something you can save to use later.<br><strong>Example:</strong> People start using it like a piggy bank — to keep wealth safe.</p>
+            </div>
+        </div>
+        <div class="arrow">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f2a900'><path d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/></svg>" alt="Arrow">
+        </div>
+        <div class="stage-container">
+            <div class="stage-item">
+                <h3>🔄 3. Medium of Exchange – “Let’s Trade with It!”</h3>
+                <p>Now that everyone trusts it, they start trading things using it.<br><strong>Example:</strong> You trade your video game for someone’s skateboard — using this trusted item.</p>
+            </div>
+            <img src="images/stage3.png" alt="Trading items using money">
+        </div>
+        <div class="arrow">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f2a900'><path d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'/></svg>" alt="Arrow">
+        </div>
+        <div class="stage-container right">
+            <img src="images/stage4.png" alt="Pricing items in money units">
+            <div class="stage-item right">
+                <h3>🧮 4. Unit of Account – “We Set Prices in It!”</h3>
+                <p>Once it’s used everywhere, people start setting pricesCharm in that item.<br><strong>Example:</strong> “That toy costs 5 gold coins” instead of saying “It costs 3 chickens and a rope!”</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Sub-Modules Button -->
+    <a href="index.html" class="back-to-sub-modules-button">Back to Sub-Modules →</a>
+
+    <script>
+        // Show "Back to Sub-Modules" button when scrolled to bottom
+        window.addEventListener('scroll', () => {
+            const button = document.querySelector('.back-to-sub-modules-button');
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            // Show button when within 100px of the bottom
+            if (scrollPosition >= documentHeight - 100) {
+                button.classList.add('visible');
+            } else {
+                button.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
