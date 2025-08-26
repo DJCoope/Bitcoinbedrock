@@ -85,6 +85,34 @@
             border-style: solid;
             border-color: white transparent transparent transparent;
         }
+        /* Donation section styles */
+        .donation-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: #fff;
+            border-top: 2px solid #F7931A;
+        }
+        .donation-icon {
+            color: #F7931A;
+            font-size: 1.5rem;
+        }
+        .donation-text {
+            color: #4D4D4D;
+            font-size: 1rem;
+        }
+        .donation-address {
+            color: #8B4513;
+            font-family: monospace;
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+        .donation-address:hover {
+            color: #FF9900;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -128,6 +156,13 @@
     </div>
 
     <footer class="bitcoin-orange text-white p-4 text-center mt-auto">
+        <div class="donation-container">
+            <i class="fas fa-bolt donation-icon"></i>
+            <div>
+                <p class="donation-text">Support Bitcoinbedrock with a Bitcoin Lightning donation:</p>
+                <a href="lightning:your_lightning_wallet_address_here" class="donation-address">your_lightning_wallet_address_here</a>
+            </div>
+        </div>
         <p>© 2025 Bitcoinbedrock. All rights reserved.</p>
     </footer>
 
