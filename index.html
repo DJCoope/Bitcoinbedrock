@@ -85,33 +85,23 @@
             border-style: solid;
             border-color: white transparent transparent transparent;
         }
-        /* Donation section styles */
-        .donation-container {
+        /* Footer gradient style matching header */
+        footer {
+            background: linear-gradient(180deg, #F7931A 0%, #FFFFFF 100%);
+        }
+        /* QR code styles */
+        .qr-container {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 1rem;
-            padding: 1rem;
-            background-color: #fff;
-            border-top: 2px solid #F7931A;
+            max-width: 4xl;
+            margin: 0 auto;
         }
-        .donation-icon {
-            color: #F7931A;
-            font-size: 1.5rem;
-        }
-        .donation-text {
-            color: #4D4D4D;
-            font-size: 1rem;
-        }
-        .donation-address {
-            color: #8B4513;
-            font-family: monospace;
-            font-size: 0.9rem;
-            word-break: break-all;
-        }
-        .donation-address:hover {
-            color: #FF9900;
-            text-decoration: underline;
+        .qr-image {
+            width: 150px;
+            height: 150px;
+            border: 3px solid #F7931A;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -141,28 +131,26 @@
     <section id="about" class="container mx-auto py-12 px-4">
         <h3 class="text-2xl md:text-3xl font-bold bitcoin-gray text-center mb-6">About Bitcoinbedrock</h3>
         <div class="flex flex-col gap-6 max-w-4xl mx-auto items-center">
-            <p class="text-lg bitcoin-gray text-center md:text-left max-w-3xl">
-                Bitcoinbedrock is an educational platform built to empower bright young minds with the basics of Bitcoin.
-                Designed for curious kids aged 8–12, it makes digital money simple, fun, and safe to explore.
-                Here, children discover the power of Bitcoin — one block at a time — through playful lessons, stories, and interactive activities.
-            </p>
+            <div class="qr-container">
+                <a href="lightning:your_lightning_wallet_address_here">
+                    <img src="images/lightning-qr.png" alt="Bitcoin Lightning Donation QR Code" class="qr-image">
+                </a>
+                <p class="text-lg bitcoin-gray text-center md:text-left max-w-3xl">
+                    Bitcoinbedrock is an educational platform built to empower bright young minds with the basics of Bitcoin.
+                    Designed for curious kids aged 8–12, it makes digital money simple, fun, and safe to explore.
+                    Here, children discover the power of Bitcoin — one block at a time — through playful lessons, stories, and interactive activities.
+                </p>
+            </div>
             <a href="start.html" class="bitcoin-orange text-white font-bold py-3 px-8 rounded-full btn-hover transition">Get Started</a>
         </div>
     </section>
 
     <div class="boulder-container" id="boulder">
         <img src="images/agent-profile.png" alt="Boulder the Coincoach" class="boulder-character" id="boulder-img">
-        <div class="speech-bubble" id="bubble">Hi there! I'm Boulder, your CoinCoach. Ready to explore the future of money?</div>
+        <div class="speech-bubble" id="bubble">Welcome to the future of money!</div>
     </div>
 
-    <footer class="bitcoin-orange text-white p-4 text-center mt-auto">
-        <div class="donation-container">
-            <i class="fas fa-bolt donation-icon"></i>
-            <div>
-                <p class="donation-text">Support Bitcoinbedrock with a Bitcoin Lightning donation:</p>
-                <a href="lightning:your_lightning_wallet_address_here" class="donation-address">your_lightning_wallet_address_here</a>
-            </div>
-        </div>
+    <footer class="text-white p-4 text-center mt-auto">
         <p>© 2025 Bitcoinbedrock. All rights reserved.</p>
     </footer>
 
