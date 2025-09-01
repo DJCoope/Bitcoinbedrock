@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Attributes of Money</title>
+    <style>
+        /* [Keep your existing CSS for body, hero, back-button, and quiz sections] */
+
+        /* New Pie Chart Container */
+        .pie-chart-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px 20px;
+            background-color: #ffedd5;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .pie-chart {
+            /* This will be the SVG or canvas element for the chart */
+            width: 300px;
+            height: 300px;
+            cursor: pointer;
+        }
+        
+        /* The Pop-up Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .attribute-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section class="pie-chart-container">
+        <h2>The 7 Attributes of Money</h2>
+        <p>Click on each section of the pie chart to learn what makes something good money!</p>
+        <div class="pie-chart" id="pieChart">
+            <svg viewBox="0 0 100 100" class="pie-chart">
+                <g class="slice" id="durability-slice">...</g>
+                <g class="slice" id="portability-slice">...</g>
+                </svg>
+        </div>
+    </section>
+
+    <div class="overlay" id="overlay">
+        <div class="attribute-box" id="attributeBox">
+            <span class="close-button" onclick="closeAttribute()">✖</span>
+            <h3 id="attributeTitle"></h3>
+            <p id="attributeText"></p>
+            <img id="attributeImage" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle the clicks and show/hide the content
+        const attributes = {
+            'durability-slice': {
+                title: 'Durability',
+                text: 'Good money doesn’t fall apart or rot! It can last a long time, like a coin or a rock, so you can save it for later.',
+                image: 'images/coin-durable.png'
+            },
+            'portability-slice': {
+                title: 'Portability',
+                text: 'You should be able to carry money easily. A big cow is hard to trade, but a few coins are easy to carry in your pocket.',
+                image: 'images/light-money.png'
+            },
+            // Add objects for the other 5 attributes:
+            // Divisibility, Uniformity, Limited Supply, Acceptability, Scarcity
+        };
+
+        const pieChart = document.getElementById('pieChart');
+        const overlay = document.getElementById('overlay');
+        const attributeTitle = document.getElementById('attributeTitle');
+        const attributeText = document.getElementById('attributeText');
+        const attributeImage = document.getElementById('attributeImage');
+
+        pieChart.addEventListener('click', (event) => {
+            const slice = event.target.closest('.slice');
+            if (slice) {
+                const id = slice.id;
+                const data = attributes[id];
+                
+                if (data) {
+                    attributeTitle.textContent = data.title;
+                    attributeText.textContent = data.text;
+                    attributeImage.src = data.image;
+                    overlay.style.display = 'flex';
+                }
+            }
+        });
+
+        function closeAttribute() {
+            overlay.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
