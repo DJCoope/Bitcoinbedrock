@@ -98,6 +98,24 @@
             margin-top: 5px;
         }
 
+        /* Money Type Item Styling */
+        .money-type {
+            margin: 20px 0;
+        }
+        .money-type p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .money-type img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            margin: 15px auto;
+            display: block;
+        }
+
         /* Conclusion Section */
         .conclusion {
             padding: 20px;
@@ -169,10 +187,10 @@
             font-size: 0.9rem;
             color: #555;
             margin-top: 10px;
-            display: none; /* Hidden until JavaScript or form logic is added */
+            display: none;
         }
 
-                /* Back to Sub-Modules Button */
+        /* Back to Sub-Modules Button */
         .back-to-sub-modules-button {
             position: fixed;
             bottom: 30px;
@@ -208,6 +226,7 @@
             .quiz-question h4 { font-size: 1.2rem; }
             .quiz-question label { font-size: 0.9rem; }
             .back-to-sub-modules-button { font-size: 1rem; padding: 12px 20px; bottom: 20px; right: 20px; }
+            .money-type img { max-width: 150px; }
         }
     </style>
 </head>
@@ -230,14 +249,34 @@
         <div class="image-caption">"Person paying using a debit card"</div>  
     </section>
 
-    <!-- Extra Section -->
+    <!-- Types of Modern Money Section -->
     <section class="conclusion">
         <h3>Types of Modern Money We Use Today</h3>
-        <p> 1.Coins and Paper Money (Cash) - Physical money you can hold in your hand.</p>
-        <p> 2.Bank Money (Cards) - Money stored in a bank account. You can spend it with a debit card or credit card.</p>
-        <p> 3.Digital Money (Online & Mobile Payments) - Paying with a phone, smartwatch, or app (like Apple Pay, Google Pay, or SnapScan).</p>
-        <p> 4.Electronic Money (E-Wallets & Mobile Money) - Stored on apps or mobile phones, especially popular in places without many banks.</p>
-        <p> 5.Cryptocurrencies - New, digital-only money that doesn’t need banks. Some people see it as the “money of the future.”</p>
+        <div class="money-type">
+            <p><strong>Coins and Paper Money (Cash)</strong> - Physical money you can hold in your hand.</p>
+            <img src="images/coins-cash.png" alt="Coins and paper money">
+            <div class="image-caption">Coins and paper money</div>
+        </div>
+        <div class="money-type">
+            <p><strong>Bank Money (Cards)</strong> - Money stored in a bank account. You can spend it with a debit card or credit card.</p>
+            <img src="images/bank-card.png" alt="Bank card">
+            <div class="image-caption">Bank card</div>
+        </div>
+        <div class="money-type">
+            <p><strong>Digital Money (Online & Mobile Payments)</strong> - Paying with a phone, smartwatch, or app (like Apple Pay, Google Pay, or SnapScan).</p>
+            <img src="images/mobile-payment.png" alt="Mobile payment">
+            <div class="image-caption">Mobile payment</div>
+        </div>
+        <div class="money-type">
+            <p><strong>Electronic Money (E-Wallets & Mobile Money)</strong> - Stored on apps or mobile phones, especially popular in places without many banks.</p>
+            <img src="images/ewallet.png" alt="Electronic money app">
+            <div class="image-caption">Electronic money app</div>
+        </div>
+        <div class="money-type">
+            <p><strong>Cryptocurrencies</strong> - New, digital-only money that doesn’t need banks. Some people see it as the “money of the future.”</p>
+            <img src="images/bitcoin.png" alt="Bitcoin cryptocurrency">
+            <div class="image-caption">Bitcoin cryptocurrency</div>
+        </div>
     </section>
 
     <!-- Note Section -->
@@ -249,7 +288,7 @@
     <!-- Conclusion Section -->
     <section class="conclusion">
         <h3>Wrapping Up!</h3>
-        <p>[Summarize the key points of the lesson. For example, “Now you know how [topic] works! What’s one cool thing you learned today?”]</p>
+        <p>Now you know how modern money works! From cash and cards to mobile payments and cryptocurrencies, money has evolved to make trading easier and faster. What’s one cool thing you learned today?</p>
     </section>
 
     <!-- Quiz Section -->
@@ -257,32 +296,32 @@
         <h3>Test Your Knowledge!</h3>
         <p>Try this quick quiz to see how much you learned!</p>
         <div class="quiz-question">
-            <h4>Question 1: [Insert question here, e.g., “What is one thing money needs to be?”]</h4>
-            <label><input type="radio" name="q1" value="a"> [Option A]</label>
-            <label><input type="radio" name="q1" value="b"> [Option B]</label>
-            <label><input type="radio" name="q1" value="c"> [Option C]</label>
-            <label><input type="radio" name="q1" value="d"> [Option D]</label>
-            <div class="quiz-feedback">[Feedback, e.g., “Great job! [Explain why the correct answer is right.]”]</div>
+            <h4>Question 1: What is one type of modern money?</h4>
+            <label><input type="radio" name="q1" value="a"> Gold bars</label>
+            <label><input type="radio" name="q1" value="b"> Cryptocurrencies</label>
+            <label><input type="radio" name="q1" value="c"> Seashells</label>
+            <label><input type="radio" name="q1" value="d"> Stamps</label>
+            <div class="quiz-feedback">Great job! Cryptocurrencies are a type of modern, digital-only money that doesn’t need banks.</div>
         </div>
         <div class="quiz-question">
-            <h4>Question 2: [Insert question here]</h4>
-            <label><input type="radio" name="q2" value="a"> [Option A]</label>
-            <label><input type="radio" name="q2" value="b"> [Option B]</label>
-            <label><input type="radio" name="q2" value="c"> [Option C]</label>
-            <label><input type="radio" name="q2" value="d"> [Option D]</label>
-            <div class="quiz-feedback">[Feedback for Question 2]</div>
+            <h4>Question 2: What can you use to pay with digital money?</h4>
+            <label><input type="radio" name="q2" value="a"> A phone or smartwatch</label>
+            <label><input type="radio" name="q2" value="b"> A paper check</label>
+            <label><input type="radio" name="q2" value="c"> A bag of coins</label>
+            <label><input type="radio" name="q2" value="d"> A letter</label>
+            <div class="quiz-feedback">Correct! Digital money allows payments using a phone, smartwatch, or apps like Apple Pay.</div>
         </div>
         <div class="quiz-question">
-            <h4>Question 3: [Insert question here]</h4>
-            <label><input type="radio" name="q3" value="a"> [Option A]</label>
-            <label><input type="radio" name="q3" value="b"> [Option B]</label>
-            <label><input type="radio" name="q3" value="c"> [Option C]</label>
-            <label><input type="radio" name="q3" value="d"> [Option D]</label>
-            <div class="quiz-feedback">[Feedback for Question 3]</div>
+            <h4>Question 3: What is true about electronic money?</h4>
+            <label><input type="radio" name="q3" value="a"> It’s only used in banks</label>
+            <label><input type="radio" name="q3" value="b"> It’s stored on apps or phones</label>
+            <label><input type="radio" name="q3" value="c"> It’s made of paper</label>
+            <label><input type="radio" name="q3" value="d"> It requires a physical bank</label>
+            <div class="quiz-feedback">Nice work! Electronic money is stored on apps or phones, often used in places with limited bank access.</div>
         </div>
     </section>
 
-     <!-- Next Lesson Button -->
+    <!-- Next Lesson Button -->
     <a href="module1.html" class="back-to-sub-modules-button">Back to Sub-Modules →</a>
 </body>
 </html>
