@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoinbedrock - Lesson</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            background-color: #fff3e0;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f2a900, #ff6200);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .hero p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 12px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+            transform: scale(1.1);
+        }
+        .back-button::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffedd5;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            color: #f2a900;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        /* Image Styling */
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            margin: 15px 0;
+            display: block;
+        }
+        .image-caption {
+            font-size: 0.9rem;
+            color: #555;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Conclusion Section */
+        .conclusion {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #ffedd5;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .conclusion h3 {
+            color: #f2a900;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .conclusion p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Quiz Section */
+        .quiz {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #ffedd5;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .quiz h3 {
+            color: #f2a900;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .quiz p {
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .quiz-question {
+            background-color: #ffe0b2;
+            border: 3px solid #f2a900;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .quiz-question:hover {
+            background-color: #ffd699;
+            border-color: #ff6200;
+            transform: scale(1.02);
+        }
+        .quiz-question h4 {
+            font-size: 1.3rem;
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .quiz-question label {
+            display: block;
+            font-size: 1rem;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+        .quiz-question input[type="radio"] {
+            margin-right: 10px;
+        }
+        .quiz-feedback {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 10px;
+            display: none; /* Hidden until JavaScript or form logic is added */
+        }
+
+        /* Next Lesson Button */
+        .next-lesson-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #f2a900, #ff6200);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            animation: bounce 2s infinite;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .next-lesson-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-6px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .content h2 { font-size: 1.5rem; }
+            .content p { font-size: 1rem; }
+            .back-button { font-size: 0.9rem; padding: 6px 10px; }
+            .conclusion h3 { font-size: 1.4rem; }
+            .conclusion p { font-size: 1rem; }
+            .quiz h3 { font-size: 1.4rem; }
+            .quiz p { font-size: 1rem; }
+            .quiz-question h4 { font-size: 1.2rem; }
+            .quiz-question label { font-size: 0.9rem; }
+            .next-lesson-button { font-size: 1rem; padding: 12px 20px; bottom: 20px; right: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <a href="module1.1.html" class="back-button">Back to Lessons</a>
+        <h1>📖 Let’s Learn About Life Before Money!</h1>
+        <p>Long ago, people didn’t have coins or bills. They traded things like food, tools, or animals. But trading wasn’t always easy!</p>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="content">
+        <h2>Trading Stuff (Bartering)</h2>
+        <p>Have you ever swapped toys, cards, or stickers with a friend? This is called trading. trading is when you give someone something you have, and they give you something you want in return. Example: “You have an extra Pokémon card, and your friend has a cool action figure. You swap them because you each want what the other has.” Bartering is just trading without using money.</p>
+        <img src="images/barter-1.png" alt="Bartering">
+        <div class="image-caption">“A picture of people bartering”</div>
+        <p>Long ago people didn’t have coins or bills or buy things on Amazon like you might today, so they swapped things. For example “If a farmer has extra eggs and a baker has extra bread, they can swap a dozen eggs for a loaf of bread.” Bartering only works if both people want what the other offers.</p>
+        <img src="images/barter-scale.png" alt="A Bartering Scale">
+        <div class="image-caption">"People may use a bartering scale to compare the weight of two objects"</div>
+        <p>What happens when one person does not want what the other is willing to give? Lets say for instance that you want your friend’s toy, but maybe your friend doesn’t want your sticker. You might need to find something else they like. This is what is known as the ‘double coincidence of wants’ problem.</p>
+        <br>
+        <p>It made trading really hard between people and slowed everything down because some things, like food, could spoil before a trade was made or it may have been to difficult to carry heavy items like cows or grain long distances or maybe two people struggled to come to an agreement on how many apples equal a pair of shoes.</p>
+    </section>
+
+    <!-- Note Section -->
+    <section class="conclusion">
+        <h3>🏦 What About Banks?</h3>
+        <p>During this time there were no banks! People swapped things directly (like apples for shoes). Since there was no money, there was no need for banks.</p>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section class="conclusion">
+        <h3>Wrapping Up!</h3>
+        <p>"Now you know what bartering is and how it came about!"</p>
+        <p>- Long ago, people traded things like food, tools, and animals because they didn’t have money like coins or bills.</p>
+        <p>- Trading, or bartering, is when two people swap items they each want.</p>
+        <p>- Bartering was fun when both friends liked what the other offered, but it had a problem called the 'double coincidence of wants'—when someone didn’t want the other’s item</p>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz">
+        <h3>Test Your Knowledge!</h3>
+        <p>Try this quick quiz to see how much you learned!</p>
+        <div class="quiz-question">
+            <h4>Question 1: What is the term used for trading goods without using money?</h4>
+            <label><input type="radio" name="q1" value="a"> [Shopping]</label>
+            <label><input type="radio" name="q1" value="b"> [Bartering]</label>
+            <label><input type="radio" name="q1" value="c"> [Selling]</label>
+            <label><input type="radio" name="q1" value="d"> [Borrowing]</label>
+            <div class="quiz-feedback">[Feedback, e.g., “Great job! [Explain why the correct answer is right.]”]</div>
+        </div>
+        <div class="quiz-question">
+            <h4>Question 2: Why might bartering have been difficult with an item like grain?</h4>
+            <label><input type="radio" name="q2" value="a"> [They were too easy to carry]</label>
+            <label><input type="radio" name="q2" value="b"> [They could spoil quickly]</label>
+            <label><input type="radio" name="q2" value="c"> [They were hard to transport or agree on value]</label>
+            <label><input type="radio" name="q2" value="d"> [They were not valuable enough]</label>
+            <div class="quiz-feedback">[Feedback for Question 2]</div>
+        </div>
+        <div class="quiz-question">
+            <h4>Question 3: What problem occurred when one person didn’t want what the other offered during a trade?</h4>
+            <label><input type="radio" name="q3" value="a"> [Too big a swap]</label>
+            <label><input type="radio" name="q3" value="b"> [Bad trade pick]</label>
+            <label><input type="radio" name="q3" value="c"> [Not enough buddies]</label>
+            <label><input type="radio" name="q3" value="d"> [Double coincidence of wants]</label>
+            <div class="quiz-feedback">[Feedback for Question 3]</div>
+        </div>
+    </section>
+
+    <!-- Next Lesson Button -->
+    <a href="special-objects.html" class="next-lesson-button">Next Lesson →</a>
+</body>
+</html>
