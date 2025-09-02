@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoinbedrock - Durable</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            background-color: #fff3e0;
+            color: #333;
+        }
+        .hero {
+            background: linear-gradient(135deg, #f2a900, #ff6200);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .hero h1 {
+            font-size: 2rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 12px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+            transform: scale(1.1);
+        }
+        .back-button::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+        .content {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffedd5;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            min-height: calc(100vh - 200px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .detail {
+            background-color: #ffe0b2;
+            border: 3px solid #f2a900;
+            border-radius: 10px;
+            padding: 15px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .detail h3 {
+            color: #f2a900;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .detail p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .detail img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            margin: 15px 0;
+        }
+        .image-caption {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 5px;
+        }
+        .next-lesson-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #f2a900, #ff6200);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            animation: bounce 2s infinite;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .next-lesson-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-6px); }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.5rem; }
+            .content h2 { font-size: 1.5rem; }
+            .content p { font-size: 1rem; }
+            .back-button { font-size: 0.9rem; padding: 6px 10px; }
+            .next-lesson-button { font-size: 1rem; padding: 12px 20px; bottom: 20px; right: 20px; }
+            .detail h3 { font-size: 1.4rem; }
+            .detail p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <a href="lesson.html" class="back-button">Back to Pie Chart</a>
+        <h1>📖 The Durable Superpower!</h1>
+    </section>
+    <section class="content">
+        <div class="detail">
+            <h3>Durable 💪</h3>
+            <p>Durable means the money lasts a long time without breaking, rotting, or wearing out. Imagine using bananas as money—they'd squish in your pocket and go bad quickly! But gold or coins? They stay good forever. Bitcoin is super durable because it's digital and can't be destroyed.</p>
+            <img src="images/durable.png" alt="Durable money example">
+            <div class="image-caption">Gold coins lasting through time</div>
+        </div>
+    </section>
+    <a href="module1.html" class="next-lesson-button">Back to Sub-Modules →</a>
+</body>
+</html>
