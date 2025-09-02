@@ -22,9 +22,10 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin: 0;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
         }
         .hero p {
             font-size: 1.1rem;
@@ -68,6 +69,11 @@
             background-color: #ffedd5;
             border-radius: 15px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            min-height: calc(100vh - 200px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         .content h2 {
             color: #f2a900;
@@ -80,6 +86,7 @@
             font-size: 1.1rem;
             line-height: 1.6;
             margin: 15px 0;
+            text-align: center;
         }
 
         /* Image Styling */
@@ -98,78 +105,40 @@
             margin-top: 5px;
         }
 
-        /* Conclusion Section */
-        .conclusion {
-            padding: 20px;
-            max-width: 1000px;
-            margin: 20px auto;
-            background-color: #ffedd5;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        /* Pie Chart Styling */
+        .pie-chart {
             text-align: center;
+            margin: 20px 0;
         }
-        .conclusion h3 {
-            color: #f2a900;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-        .conclusion p {
-            font-size: 1.1rem;
-            line-height: 1.6;
+        .pie-chart svg {
+            max-width: 100%;
+            height: auto;
         }
 
-        /* Quiz Section */
-        .quiz {
-            padding: 20px;
-            max-width: 1000px;
-            margin: 20px auto;
-            background-color: #ffedd5;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        .quiz h3 {
-            color: #f2a900;
-            font-size: 1.8rem;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-        .quiz p {
-            font-size: 1.1rem;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .quiz-question {
+        /* Detail Sections */
+        .detail {
             background-color: #ffe0b2;
             border: 3px solid #f2a900;
             border-radius: 10px;
             padding: 15px;
-            margin-bottom: 15px;
+            margin-top: 20px;
             transition: background-color 0.3s, transform 0.2s;
+            width: 100%;
+            max-width: 600px;
         }
-        .quiz-question:hover {
+        .detail:hover {
             background-color: #ffd699;
             border-color: #ff6200;
             transform: scale(1.02);
         }
-        .quiz-question h4 {
-            font-size: 1.3rem;
-            margin: 0 0 10px 0;
-            color: #333;
+        .detail h3 {
+            color: #f2a900;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
         }
-        .quiz-question label {
-            display: block;
-            font-size: 1rem;
-            margin: 8px 0;
-            cursor: pointer;
-        }
-        .quiz-question input[type="radio"] {
-            margin-right: 10px;
-        }
-        .quiz-feedback {
-            font-size: 0.9rem;
-            color: #555;
-            margin-top: 10px;
-            display: none; /* Hidden until JavaScript or form logic is added */
+        .detail p {
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
 
         /* Next Lesson Button */
@@ -202,18 +171,15 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
+            .hero h1 { font-size: 1.5rem; }
             .hero p { font-size: 1rem; }
             .content h2 { font-size: 1.5rem; }
             .content p { font-size: 1rem; }
             .back-button { font-size: 0.9rem; padding: 6px 10px; }
-            .conclusion h3 { font-size: 1.4rem; }
-            .conclusion p { font-size: 1rem; }
-            .quiz h3 { font-size: 1.4rem; }
-            .quiz p { font-size: 1rem; }
-            .quiz-question h4 { font-size: 1.2rem; }
-            .quiz-question label { font-size: 0.9rem; }
             .next-lesson-button { font-size: 1rem; padding: 12px 20px; bottom: 20px; right: 20px; }
+            .detail h3 { font-size: 1.4rem; }
+            .detail p { font-size: 1rem; }
+            .pie-chart svg { width: 100%; height: auto; }
         }
     </style>
 </head>
@@ -227,64 +193,89 @@
 
     <!-- Main Content Section -->
     <section class="content">
-        <h2>Trading Stuff (Bartering)</h2>
-        <p>Have you ever swapped toys, cards, or stickers with a friend? This is called trading. trading is when you give someone something you have, and they give you something you want in return. Example: “You have an extra Pokémon card, and your friend has a cool action figure. You swap them because you each want what the other has.” Bartering is just trading without using money.</p>
-        <img src="images/barter-1.png" alt="Bartering">
-        <div class="image-caption">“A picture of people bartering”</div>
-        <p>Long ago people didn’t have coins or bills or buy things on Amazon like you might today, so they swapped things. For example “If a farmer has extra eggs and a baker has extra bread, they can swap a dozen eggs for a loaf of bread.” Bartering only works if both people want what the other offers.</p>
-        <img src="images/barter-scale.png" alt="A Bartering Scale">
-        <div class="image-caption">"People may use a bartering scale to compare the weight of two objects"</div>
-        <p>What happens when one person does not want what the other is willing to give? Lets say for instance that you want your friend’s toy, but maybe your friend doesn’t want your sticker. You might need to find something else they like. This is what is known as the ‘double coincidence of wants’ problem.</p>
-        <br>
-        <p>It made trading really hard between people and slowed everything down because some things, like food, could spoil before a trade was made or it may have been to difficult to carry heavy items like cows or grain long distances or maybe two people struggled to come to an agreement on how many apples equal a pair of shoes.</p>
-    </section>
-
-    <!-- Note Section -->
-    <section class="conclusion">
-        <h3>🏦 What About Banks?</h3>
-        <p>During this time there were no banks! People swapped things directly (like apples for shoes). Since there was no money, there was no need for banks.</p>
-    </section>
-
-    <!-- Conclusion Section -->
-    <section class="conclusion">
-        <h3>Wrapping Up!</h3>
-        <p>"Now you know what bartering is and how it came about!"</p>
-        <p>- Long ago, people traded things like food, tools, and animals because they didn’t have money like coins or bills.</p>
-        <p>- Trading, or bartering, is when two people swap items they each want.</p>
-        <p>- Bartering was fun when both friends liked what the other offered, but it had a problem called the 'double coincidence of wants'—when someone didn’t want the other’s item</p>
-    </section>
-
-    <!-- Quiz Section -->
-    <section class="quiz">
-        <h3>Test Your Knowledge!</h3>
-        <p>Try this quick quiz to see how much you learned!</p>
-        <div class="quiz-question">
-            <h4>Question 1: What is the term used for trading goods without using money?</h4>
-            <label><input type="radio" name="q1" value="a"> [Shopping]</label>
-            <label><input type="radio" name="q1" value="b"> [Bartering]</label>
-            <label><input type="radio" name="q1" value="c"> [Selling]</label>
-            <label><input type="radio" name="q1" value="d"> [Borrowing]</label>
-            <div class="quiz-feedback">[Feedback, e.g., “Great job! [Explain why the correct answer is right.]”]</div>
+        <h2>Explore the 8 Attributes of Good Money</h2>
+        <p>Click on each slice of the pie chart below to learn more about each attribute!</p>
+        <div class="pie-chart">
+            <svg width="900" height="900" viewBox="0 0 900 900">
+                <path d="M 450 450 L 450.0 112.5 A 337.5 337.5 0 0 1 688.6485386506159 211.35145322804023 Z" fill="#f2a900" stroke="white" stroke-width="4" onclick="showDetail('durable')" style="cursor:pointer;" />
+                <text x="533.9501394995196" y="247.11780354733674" fill="black" font-size="27" text-anchor="middle" dominant-baseline="central" transform="rotate(22.5, 533.9501394995196, 247.11780354733674)">Durable</text>
+                <path d="M 450 450 L 688.6485386506159 211.35145322804023 A 337.5 337.5 0 0 1 787.5 450.0 Z" fill="#ff6200" stroke="white" stroke-width="4" onclick="showDetail('portable')" style="cursor:pointer;" />
+                <text x="652.6752859711135" y="365.9243262784092" fill="black" font-size="27" text-anchor="middle" dominant-baseline="central" transform="rotate(67.5, 652.6752859711135, 365.9243262784092)">Portable</text>
+                <path d="M 450 450 L 787.5 450.0 A 337.5 337.5 0 0 1 688.6485386506159 688.6485386506159 Z" fill="#ff8500" stroke="white" stroke-width="4" onclick="showDetail('fungible')" style="cursor:pointer;" />
+                <text x="652.6752859711135" y="533.9501394995196" fill="black" font-size="27" text-anchor="middle" dominant-baseline="central" transform="rotate(112.5, 652.6752859711135, 533.9501394995196)">Fungible</text>
+                <path d="M 450 450 L 688.6485386506159 688.6485386506159 A 337.5 337.5 0 0 1 450.0 787.5 Z" fill="#ffa600" stroke="white" stroke-width="4" onclick="showDetail('verifiable')" style="cursor:pointer;" />
+                <text x="533.9501394995196" y="652.6752859711135" fill="black" font-size="27" text-anchor="middle" dominant-baseline="central" transform="rotate(157.5, 533.9501394995196, 652.6752859711135)">Verifiable</text>
+                <path d="M 450 450 L 450.0 787.5 A 337.5 337.5 0 0 1 211.35145322804023 688.6485386506159 Z" fill="#ffc800" stroke="white" stroke-width="4" onclick="showDetail('divisible')" style="cursor:pointer;" />
+                <text x="365.9243262784092" y="652.6752859711135" fill="black" font-size="27" text-anchor="middle" dominant-baseline="central" transform="rotate(202.5, 365.9243262784092, 652.6752859711135)">Divisible</text>
+                <path d="M 450 450 L 211.35145322804023 688.6485386506159 A 337.5 337.5 0 0 1 112.5 450.0000000000001 Z" fill="#ffea00" stroke="white" stroke-width="4" onclick="showDetail('scarce')" style="cursor:pointer;" />
+                <text x="247.11780354733674" y="533.9501394995196" fill="black" font-size="27" text-anchor="middle" dominant-baseline="central" transform="rotate(247.5, 247.11780354733674, 533.9501394995196)">Scarce</text>
+                <path d="M 450 450 L 112.5 450.0000000000001 A 337.5 337.5 0 0 1 211.3514532280402 211.35145322804023 Z" fill="#ffd700" stroke="white" stroke-width="4" onclick="showDetail('long-history')" style="cursor:pointer;" />
+                <text x="247.1178035473367" y="349.8243262784092" fill="black" font-size="22" text-anchor="middle" dominant-baseline="central" transform="rotate(292.5, 247.1178035473367, 349.8243262784092)">Long History</text>
+                <path d="M 450 450 L 211.3514532280402 211.35145322804023 A 337.5 337.5 0 0 1 449.9999999999999 112.5 Z" fill="#ffbb00" stroke="white" stroke-width="4" onclick="showDetail('censorship-resistance')" style="cursor:pointer;" />
+                <text x="365.9243262784092" y="231.79761305729912" fill="black" font-size="16" text-anchor="middle" dominant-baseline="central" transform="rotate(337.5, 365.9243262784092, 231.79761305729912)">Censorship Resistance</text>
+            </svg>
         </div>
-        <div class="quiz-question">
-            <h4>Question 2: Why might bartering have been difficult with an item like grain?</h4>
-            <label><input type="radio" name="q2" value="a"> [They were too easy to carry]</label>
-            <label><input type="radio" name="q2" value="b"> [They could spoil quickly]</label>
-            <label><input type="radio" name="q2" value="c"> [They were hard to transport or agree on value]</label>
-            <label><input type="radio" name="q2" value="d"> [They were not valuable enough]</label>
-            <div class="quiz-feedback">[Feedback for Question 2]</div>
+        <div id="detail-durable" class="detail" style="display: none;">
+            <h3>Durable 💪</h3>
+            <p>Durable means the money lasts a long time without breaking, rotting, or wearing out. Imagine using bananas as money—they'd squish in your pocket and go bad quickly! But gold or coins? They stay good forever. Bitcoin is super durable because it's digital and can't be destroyed.</p>
+            <img src="images/durable.png" alt="Durable money example">
+            <div class="image-caption">Gold coins lasting through time</div>
         </div>
-        <div class="quiz-question">
-            <h4>Question 3: What problem occurred when one person didn’t want what the other offered during a trade?</h4>
-            <label><input type="radio" name="q3" value="a"> [Too big a swap]</label>
-            <label><input type="radio" name="q3" value="b"> [Bad trade pick]</label>
-            <label><input type="radio" name="q3" value="c"> [Not enough buddies]</label>
-            <label><input type="radio" name="q3" value="d"> [Double coincidence of wants]</label>
-            <div class="quiz-feedback">[Feedback for Question 3]</div>
+        <div id="detail-portable" class="detail" style="display: none;">
+            <h3>Portable 🚀</h3>
+            <p>Portable money is easy to carry around. You wouldn't want to lug a heavy rock or a cow everywhere! Coins and bills fit right in your wallet. Bitcoin is the ultimate portable money—you can carry millions of dollars worth on a phone or even memorize it in your head.</p>
+            <img src="images/portable.png" alt="Portable money example">
+            <div class="image-caption">Carrying coins in a pocket</div>
+        </div>
+        <div id="detail-fungible" class="detail" style="display: none;">
+            <h3>Fungible 🔄</h3>
+            <p>Fungible means every unit is the same as another. One $1 bill is exactly like any other $1 bill. If you used unique stickers as money, some might be rarer and worth more. Bitcoin is fungible—every bitcoin is identical to another.</p>
+            <img src="images/fungible.png" alt="Fungible money example">
+            <div class="image-caption">Identical coins</div>
+        </div>
+        <div id="detail-verifiable" class="detail" style="display: none;">
+            <h3>Verifiable ✅</h3>
+            <p>Verifiable means you can easily check if the money is real and not fake. Coins have special marks and weights that are hard to copy. With Bitcoin, the blockchain lets anyone verify transactions instantly without trusting a bank.</p>
+            <img src="images/verifiable.png" alt="Verifiable money example">
+            <div class="image-caption">Checking a coin's authenticity</div>
+        </div>
+        <div id="detail-divisible" class="detail" style="display: none;">
+            <h3>Divisible ✂️</h3>
+            <p>Divisible money can be split into smaller parts. A dollar breaks into 100 pennies for small buys. You can't cut a cow in half for a loaf of bread! Bitcoin is divisible down to 8 decimal places, called satoshis.</p>
+            <img src="images/divisible.png" alt="Divisible money example">
+            <div class="image-caption">Breaking a coin into smaller pieces</div>
+        </div>
+        <div id="detail-scarce" class="detail" style="display: none;">
+            <h3>Scarce 🌟</h3>
+            <p>Scarce means there's a limited amount, so it keeps its value. If money grew on trees, it wouldn't be worth much! Gold is scarce because it's hard to find. Bitcoin has a fixed supply of 21 million coins—no more can be made.</p>
+            <img src="images/scarce.png" alt="Scarce money example">
+            <div class="image-caption">Rare gold nugget</div>
+        </div>
+        <div id="detail-long-history" class="detail" style="display: none;">
+            <h3>Has a Long History 📜</h3>
+            <p>Money with a long history is trusted because people have used it for ages. Gold has been money for thousands of years! Bitcoin is newer, but it's building a strong history as digital gold.</p>
+            <img src="images/long-history.png" alt="Long history money example">
+            <div class="image-caption">Ancient gold coins</div>
+        </div>
+        <div id="detail-censorship-resistance" class="detail" style="display: none;">
+            <h3>Censorship-Resistance 🛡️</h3>
+            <p>Censorship-resistant money can't be easily stopped or seized by others, like governments. If a bank freezes your account, you can't use your money. Bitcoin is resistant because it's decentralized—no one controls the whole network.</p>
+            <img src="images/censorship-resistance.png" alt="Censorship-resistant money example">
+            <div class="image-caption">Secure digital wallet</div>
         </div>
     </section>
 
     <!-- Next Lesson Button -->
     <a href="module1.html" class="next-lesson-button">Back to Sub-Modules →</a>
+
+    <script>
+        function showDetail(attr) {
+            var details = document.querySelectorAll('.detail');
+            details.forEach(function(detail) {
+                detail.style.display = 'none';
+            });
+            document.getElementById('detail-' + attr).style.display = 'block';
+        }
+    </script>
 </body>
 </html>
