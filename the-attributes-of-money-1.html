@@ -1,125 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Superpowers of Money</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    h1 {
-      margin-top: 20px;
-    }
-    .progress-container {
-      width: 80%;
-      background: #ddd;
-      border-radius: 25px;
-      margin: 20px auto;
-      overflow: hidden;
-    }
-    .progress-bar {
-      height: 30px;
-      background: #4caf50;
-      width: 0;
-      transition: width 0.3s;
-    }
-    .progress-text {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-    svg {
-      width: 80%;
-      max-width: 500px;
-      margin-top: 20px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoinbedrock - Lesson</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            background-color: #fff3e0;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f2a900, #ff6200);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .hero h1 {
+            font-size: 2rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 12px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+            transform: scale(1.1);
+        }
+        .back-button::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffedd5;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            min-height: calc(100vh - 200px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .content h2 {
+            color: #f2a900;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        /* Pie Chart Styling */
+        .pie-chart {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .pie-chart svg {
+            max-width: 100%;
+            height: auto;
+        }
+        .pie-slice-group:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s;
+        }
+
+        /* Progress Indicator */
+        .progress-container {
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+        }
+        .progress-bar {
+            background-color: #ffe0b2;
+            border: 3px solid #f2a900;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+            margin: 10px auto;
+            width: 80%;
+        }
+        .progress-fill {
+            background: linear-gradient(135deg, #f2a900, #ff6200);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease-in-out;
+        }
+        .progress-text {
+            font-size: 1.1rem;
+            color: #f2a900;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Next Lesson Button */
+        .next-lesson-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #f2a900, #ff6200);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            animation: bounce 2s infinite;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .next-lesson-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-6px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.5rem; }
+            .hero p { font-size: 1rem; }
+            .content h2 { font-size: 1.5rem; }
+            .content p { font-size: 1rem; }
+            .back-button { font-size: 0.9rem; padding: 6px 10px; }
+            .next-lesson-button { font-size: 1rem; padding: 12px 20px; bottom: 20px; right: 20px; }
+            .progress-text { font-size: 1rem; }
+            .progress-bar { width: 90%; }
+        }
+    </style>
 </head>
 <body>
-  <h1>The Superpowers of Money</h1>
+    <!-- Hero Section -->
+    <section class="hero">
+        <a href="the-attributes-of-money.html" class="back-button">Back to Lesson</a>
+        <h1>📖 How Some Things Become More Valuable Than Others!</h1>
+        <p>People have used many things as money over time, but not everything makes good money. Here are 8 superpowers that the best types of money have. Let's break them down:</p>
+    </section>
 
-  <!-- Progress Bar -->
-  <div class="progress-container">
-    <div id="progress-fill" class="progress-bar"></div>
-  </div>
-  <div class="progress-text">0/8 Superpowers Discovered!</div>
+    <!-- Main Content Section -->
+    <section class="content">
+        <h2>Explore the 8 Attributes of Good Money</h2>
+        <p>Click on each slice of the pie chart below to learn more about each attribute!</p>
+        <div class="pie-chart">
+            <svg width="900" height="900" viewBox="0 0 900 900">
+                <g class="pie-slice-group" onclick="navigateToDetail('durable')">
+                    <path d="M 450 450 L 450.0 112.5 A 337.5 337.5 0 0 1 688.6485386506159 211.35145322804023 Z" fill="#f2a900" stroke="white" stroke-width="4" style="cursor:pointer;" />
+                    <text x="533.9501394995196" y="247.11780354733674" fill="black" font-size="27" text-anchor="middle" dominant-baseline="central" transform="rotate(22.5, 533.9501394995196, 247.11780354733674)">Durable</text>
+                </g>
+                <g class="pie-slice-group" onclick="navigateToDetail('portable')">
+                    <path d="M 450 450 L 688.6485386506159 211.35145322804023 A 337.5 337.5 0 0 1 787.5 450.0 Z" fill="#ff6200" stroke="white" stroke-width="4" style="cursor:pointer;" />
+                    <text x="652.6752859711135" y="365.9243262784092" fill="black" font-size="27" text-anchor="middle" dominant-baseline="central" transform="rotate(67.5, 652.6752859711135, 365.9243262784092)">Portable</text>
+                </g>
+                <g class="pie-slice-group" onclick="navigateToDetail('fungible')">
+                    <path d="M 450 450 L 787.5 450.0 A 337.5 337.5 0 0 1 688.6485386506159 688.6485386506159 Z" fill="#ff8500" stroke="white" stroke-width="4" style="cursor:pointer;" />
+                    <text x="652.6752859711135" y="533.9501394995196" fill="black" font-size="27" text-anchor="middle" dominant-baseline="central" transform="rotate(112.5, 652.6752859711135, 533.9501394995196)">Fungible</text>
+                </g>
+                <g class="pie-slice-group" onclick="navigateToDetail('verifiable')">
+                    <path d="M 450 450 L 688.6485386506159 688.6485386506159 A 337.5 337.5 0 0 1 450.0 787.5 Z" fill="#ffa600" stroke="white" stroke-width="4" style="cursor:pointer;" />
+                    <text x="533.9501394995196" y="652.6752859711135" fill="black" font-size="27" text-anchor="middle" dominant-baseline="central" transform="rotate(157.5, 533.9501394995196, 652.6752859711135)">Verifiable</text>
+                </g>
+                <g class="pie-slice-group" onclick="navigateToDetail('divisible')">
+                    <path d="M 450 450 L 450.0 787.5 A 337.5 337.5 0 0 1 211.35145322804023 688.6485386506159 Z" fill="#ffc800" stroke="white" stroke-width="4" style="cursor:pointer;" />
+                    <text x="365.9243262784092" y="652.6752859711135" fill="black" font-size="27" text-anchor="middle" dominant-baseline="central" transform="rotate(202.5, 365.9243262784092, 652.6752859711135)">Divisible</text>
+                </g>
+                <g class="pie-slice-group" onclick="navigateToDetail('scarce')">
+                    <path d="M 450 450 L 211.35145322804023 688.6485386506159 A 337.5 337.5 0 0 1 112.5 450.0000000000001 Z" fill="#ffea00" stroke="white" stroke-width="4" style="cursor:pointer;" />
+                    <text x="247.11780354733674" y="533.9501394995196" fill="black" font-size="27" text-anchor="middle" dominant-baseline="central" transform="rotate(247.5, 247.11780354733674, 533.9501394995196)">Scarce</text>
+                </g>
+                <g class="pie-slice-group" onclick="navigateToDetail('history')">
+                    <path d="M 450 450 L 112.5 450.0000000000001 A 337.5 337.5 0 0 1 211.3514532280402 211.35145322804023 Z" fill="#ffd700" stroke="white" stroke-width="4" style="cursor:pointer;" />
+                    <text x="247.1178035473367" y="349.8243262784092" fill="black" font-size="22" text-anchor="middle" dominant-baseline="central" transform="rotate(292.5, 247.1178035473367, 349.8243262784092)">Long History</text>
+                </g>
+                <g class="pie-slice-group" onclick="navigateToDetail('resistance')">
+                    <path d="M 450 450 L 211.3514532280402 211.35145322804023 A 337.5 337.5 0 0 1 449.9999999999999 112.5 Z" fill="#ffbb00" stroke="white" stroke-width="4" style="cursor:pointer;" />
+                    <text x="365.9243262784092" y="231.79761305729912" fill="black" font-size="16" text-anchor="middle" dominant-baseline="central" transform="rotate(337.5, 365.9243262784092, 231.79761305729912)">Censorship Resistance</text>
+                </g>
+            </svg>
+        </div>
+        <div class="progress-container">
+            <p class="progress-text">0/8 Superpowers Discovered!</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Pie Chart -->
-  <svg viewBox="0 0 32 32">
-    <circle r="16" cx="16" cy="16" fill="white"></circle>
-    <path d="M16 16 L16 0 A16 16 0 0 1 31.05 8.95 Z" fill="#ff9999" onclick="navigateToDetail('durable')"></path>
-    <path d="M16 16 L31.05 8.95 A16 16 0 0 1 25.6 25.6 Z" fill="#66b3ff" onclick="navigateToDetail('portable')"></path>
-    <path d="M16 16 L25.6 25.6 A16 16 0 0 1 8.95 31.05 Z" fill="#99ff99" onclick="navigateToDetail('fungible')"></path>
-    <path d="M16 16 L8.95 31.05 A16 16 0 0 1 0 16 Z" fill="#ffcc99" onclick="navigateToDetail('verifiable')"></path>
-    <path d="M16 16 L0 16 A16 16 0 0 1 8.95 0.95 Z" fill="#c2c2f0" onclick="navigateToDetail('divisible')"></path>
-    <path d="M16 16 L8.95 0.95 A16 16 0 0 1 25.6 6.4 Z" fill="#ffb3e6" onclick="navigateToDetail('scarce')"></path>
-    <path d="M16 16 L25.6 6.4 A16 16 0 0 1 31.05 8.95 Z" fill="#c2f0c2" onclick="navigateToDetail('history')"></path>
-    <path d="M16 16 L31.05 8.95 A16 16 0 0 1 16 0 Z" fill="#f0c2c2" onclick="navigateToDetail('resistance')"></path>
-  </svg>
+    <!-- Next Lesson Button -->
+    <a href="module1.html" class="next-lesson-button">Back to Sub-Modules →</a>
 
-  <!-- Click Sound -->
-  <audio id="click-sound" src="click.mp3" preload="auto"></audio>
+    <!-- Audio for Click Sound -->
+    <audio id="click-sound" src="sounds/pop.mp3"></audio>
 
-  <script>
-    const attributes = ['durable', 'portable', 'fungible', 'verifiable', 'divisible', 'scarce', 'long-history', 'censorship-resistance'];
+    <script>
+        const attributes = ['durable', 'portable', 'fungible', 'verifiable', 'divisible', 'scarce', 'long-history', 'censorship-resistance'];
 
-    // Reset progress if this load is a real refresh (F5/Reload)
-    function resetProgressOnRefresh() {
-        var isReload = false;
-
-        // Modern API
-        if (performance && performance.getEntriesByType) {
-            var nav = performance.getEntriesByType('navigation')[0];
-            if (nav && nav.type === 'reload') isReload = true;
+        function updateProgress() {
+            const exploredAttributes = JSON.parse(localStorage.getItem('exploredAttributes') || '[]');
+            const progress = (exploredAttributes.length / attributes.length) * 100;
+            document.getElementById('progress-fill').style.width = `${progress}%`;
+            document.querySelector('.progress-text').textContent = `${exploredAttributes.length}/8 Superpowers Discovered!`;
         }
 
-        // Fallback for older browsers
-        if (!isReload && performance && performance.navigation) {
-            isReload = performance.navigation.type === 1; // 1 = reload
+        function navigateToDetail(attr) {
+            // Play sound effect
+            const clickSound = document.getElementById('click-sound');
+            clickSound.play();
+
+            // Update progress in localStorage
+            let exploredAttributes = JSON.parse(localStorage.getItem('exploredAttributes') || '[]');
+            if (!exploredAttributes.includes(attr)) {
+                exploredAttributes.push(attr);
+                localStorage.setItem('exploredAttributes', JSON.stringify(exploredAttributes));
+            }
+
+            // Navigate to the detail page
+            window.location.href = `the-attributes-of-money-${attr}.html`;
         }
 
-        if (isReload) {
-            localStorage.removeItem('exploredAttributes'); // start from 0 on refresh
-        }
-    }
-
-    function updateProgress() {
-        const exploredAttributes = JSON.parse(localStorage.getItem('exploredAttributes') || '[]');
-        const progress = (exploredAttributes.length / attributes.length) * 100;
-        document.getElementById('progress-fill').style.width = `${progress}%`;
-        document.querySelector('.progress-text').textContent = `${exploredAttributes.length}/8 Superpowers Discovered!`;
-    }
-
-    function navigateToDetail(attr) {
-        // Play sound effect
-        const clickSound = document.getElementById('click-sound');
-        clickSound.play();
-
-        // Update progress in localStorage (only once per attribute, max 8)
-        let exploredAttributes = JSON.parse(localStorage.getItem('exploredAttributes') || '[]');
-        if (
-            exploredAttributes.length < attributes.length &&
-            !exploredAttributes.includes(attr)
-        ) {
-            exploredAttributes.push(attr);
-            localStorage.setItem('exploredAttributes', JSON.stringify(exploredAttributes));
-        }
-
-        // Navigate to the detail page
-        window.location.href = `the-attributes-of-money-${attr}.html`;
-    }
-
-    // Initialize on page load
-    document.addEventListener('DOMContentLoaded', function () {
-        resetProgressOnRefresh();
-        updateProgress();
-    });
-  </script>
+        // Initialize progress on page load
+        window.onload = updateProgress;
+    </script>
 </body>
 </html>
-
