@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoinbedrock - Module 2: What is Bitcoin?</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            background-color: #fff3e0;
+            color: #333;
+        }
+
+        /* Hero Section - Enhanced with animation */
+        .hero {
+            background: linear-gradient(135deg, #f2a900, #ff6200);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            animation: pulse 2s infinite;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .hero img.bitcoin-logo {
+            width: 40px;
+            height: auto;
+            animation: spin 10s linear infinite;
+        }
+
+        /* Back Button - Same as Module 1 */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 12px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+            transform: scale(1.1);
+        }
+        .back-button::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        /* Sections */
+        .section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffedd5;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #f2a900;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .section h2::after {
+            content: '🌟';
+            position: absolute;
+            font-size: 1.5rem;
+            top: -10px;
+            right: -30px;
+            animation: sparkle 1.5s infinite;
+        }
+
+        /* Sub-Modules List - Grid layout for a different flow */
+        .sub-modules {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .sub-module {
+            background-color: #ffe0b2;
+            border: 3px solid #f2a900;
+            border-radius: 10px;
+            padding: 20px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            animation: fadeInUp 0.5s ease-in-out;
+        }
+        .sub-module:hover {
+            background-color: #ffd699;
+            border-color: #ff6200;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        .sub-module h3 {
+            color: #333;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .sub-module p {
+            margin: 0;
+            font-size: 1rem;
+            color: #333;
+        }
+        .sub-module img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #f2a900;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+        .sub-module:hover img {
+            transform: rotate(15deg) scale(1.1);
+        }
+        .sub-module-content {
+            flex: 1;
+        }
+        .sub-module::before {
+            content: '🎯';
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background-color: #ff6200;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border: 2px solid #f2a900;
+        }
+
+        /* Animations for Engagement */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes sparkle {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .hero img.bitcoin-logo { width: 30px; }
+            .section h2 { font-size: 1.5rem; }
+            .back-button { font-size: 0.9rem; padding: 6px 10px; }
+            .sub-module h3 { font-size: 1.3rem; }
+            .sub-module p { font-size: 0.9rem; }
+            .sub-module img { width: 80px; height: 80px; }
+            .sub-modules { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section - Enhanced with Bitcoin logo and pulse animation -->
+    <section class="hero">
+        <a href="start.html" class="back-button">Back to Modules</a>
+        <h1>
+            <img src="images/bitcoin-logo.png" alt="Bitcoin logo" class="bitcoin-logo">
+            Module 2: What is Bitcoin?
+        </h1>
+        <p>Blast off into the super cool world of Bitcoin – a digital treasure that's full of surprises!</p>
+    </section>
+
+    <!-- Sub-Modules Section - Grid layout, circular images, centered content -->
+    <section class="section">
+        <h2>Pick Your Bitcoin Adventure!</h2>
+        <div class="sub-modules">
+            <a href="module2.1.html" class="sub-module" style="text-decoration: none;">
+                <img src="images/bitcoin-idea.png" alt="Lightbulb representing the big idea behind Bitcoin">
+                <div class="sub-module-content">
+                    <h3>🚀 The Big Idea Behind Bitcoin</h3>
+                    <p>Discover the awesome idea that makes Bitcoin zoom like a rocket!</p>
+                </div>
+            </a>
+            <a href="module2.2.html" class="sub-module" style="text-decoration: none;">
+                <img src="images/bitcoin-history.png" alt="Timeline of Bitcoin's history">
+                <div class="sub-module-content">
+                    <h3>📜 Bitcoin's History and Philosophy</h3>
+                    <p>Journey through time to uncover Bitcoin’s epic origin story!</p>
+                </div>
+            </a>
+            <a href="module2.3.html" class="sub-module" style="text-decoration: none;">
+                <img src="images/bitcoin-mining.png" alt="Mining tools showing Bitcoin creation">
+                <div class="sub-module-content">
+                    <h3>🛠️ How Bitcoin is Created and Limited</h3>
+                    <p>Crack the code of how Bitcoins are made – it’s like a digital treasure hunt!</p>
+                </div>
+            </a>
+            <a href="module2.4.html" class="sub-module" style="text-decoration: none;">
+                <img src="images/bitcoin-value.png" alt="Shiny Bitcoin coin">
+                <div class="sub-module-content">
+                    <h3>💎 What Makes Bitcoin Valuable</h3>
+                    <p>Find out why Bitcoin sparkles like a rare gem in the digital world!</p>
+                </div>
+            </a>
+            <a href="module2.5.html" class="sub-module" style="text-decoration: none;">
+                <img src="images/bitcoin-myths.png" alt="Question marks busting Bitcoin myths">
+                <div class="sub-module-content">
+                    <h3>🤔 Common Misconceptions About Bitcoin</h3>
+                    <p>Bust silly myths and reveal the real Bitcoin secrets!</p>
+                </div>
+            </a>
+            <a href="module2.6.html" class="sub-module" style="text-decoration: none;">
+                <img src="images/proof-of-work.png" alt="Puzzle pieces representing Bitcoin's proof of work">
+                <div class="sub-module-content">
+                    <h3>⚡ How Bitcoin Works (Energy and Proof of Work)</h3>
+                    <p>Solve the electrifying puzzles that keep Bitcoin safe and strong!</p>
+                </div>
+            </a>
+        </div>
+    </section>
+</body>
+</html>
