@@ -7,7 +7,7 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            font-family: 'Comic Sans MS', 'Arial', 'Noto Sans', sans-serif;
             background-color: #fff3e0;
             color: #333;
         }
@@ -30,7 +30,6 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-            animation: pulse 2s infinite;
         }
         .hero p {
             font-size: 1.2rem;
@@ -42,11 +41,8 @@
             animation: spin 10s linear infinite;
         }
 
-        /* Back Button - Same as Module 1 */
+        /* Back Button - Used for both top-left and bottom-right */
         .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
             display: inline-flex;
             align-items: center;
             color: white;
@@ -55,7 +51,7 @@
             padding: 8px 12px;
             background-color: rgba(0, 0, 0, 0.2);
             border-radius: 10px;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: background-color 0.3s, transform 0.2s, opacity 0.3s;
         }
         .back-button:hover {
             background-color: rgba(0, 0, 0, 0.4);
@@ -69,6 +65,23 @@
             margin-right: 8px;
             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>') no-repeat center;
             background-size: contain;
+        }
+        .back-button-top {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .back-button-bottom {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .back-button-bottom.visible {
+            opacity: 1;
+            pointer-events: auto;
         }
 
         /* Sections */
@@ -86,15 +99,6 @@
             text-align: center;
             margin-bottom: 20px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-        .section h2::after {
-            content: '🌟';
-            position: absolute;
-            font-size: 1.5rem;
-            top: -10px;
-            right: -30px;
-            animation: sparkle 1.5s infinite;
         }
 
         /* Sub-Modules List - Grid layout for a different flow */
@@ -151,7 +155,7 @@
             flex: 1;
         }
         .sub-module::before {
-            content: '🎯';
+            content: '₿';
             position: absolute;
             top: -15px;
             right: -15px;
@@ -165,6 +169,7 @@
             justify-content: center;
             font-size: 1.2rem;
             border: 2px solid #f2a900;
+            font-family: 'Noto Sans', 'Arial', sans-serif;
         }
 
         /* Animations for Engagement */
@@ -176,19 +181,9 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
         @keyframes spin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
-        }
-        @keyframes sparkle {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
         }
 
         /* Responsive Design */
@@ -202,13 +197,14 @@
             .sub-module p { font-size: 0.9rem; }
             .sub-module img { width: 80px; height: 80px; }
             .sub-modules { grid-template-columns: 1fr; }
+            .back-button-bottom { bottom: 10px; right: 10px; }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section - Enhanced with Bitcoin logo and pulse animation -->
+    <!-- Hero Section - Enhanced with Bitcoin logo -->
     <section class="hero">
-        <a href="start.html" class="back-button">Back to Modules</a>
+        <a href="start.html" class="back-button back-button-top">Back to Modules</a>
         <h1>
             <img src="images/bitcoin-round-1.png" alt="Bitcoin logo" class="bitcoin-logo">
             Module 2: What is Bitcoin?
@@ -264,5 +260,20 @@
             </a>
         </div>
     </section>
+
+    <!-- Bottom Right Back Button -->
+    <a href="start.html" class="back-button back-button-bottom">Back to Modules</a>
+
+    <!-- JavaScript for Scroll-Based Visibility -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const backButtonBottom = document.querySelector('.back-button-bottom');
+            if (window.scrollY > 100) {
+                backButtonBottom.classList.add('visible');
+            } else {
+                backButtonBottom.classList.remove('visible');
+            }
+        });
+    </script>
 </body>
 </html>
