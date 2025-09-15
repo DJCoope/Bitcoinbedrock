@@ -118,7 +118,7 @@
 
         /* Sections */
         .section {
-            padding: 40px 20px 120px 20px; /* Increased padding-bottom for spacing */
+            padding: 40px 20px 120px 20px;
             max-width: 1200px;
             margin: 0 auto;
             background-color: #ffedd5;
@@ -137,12 +137,12 @@
         /* Sub-Modules Circular Orbit */
         .sub-modules {
             position: relative;
-            height: 700px; /* Increased to accommodate full orbit path and extra spacing */
+            height: 700px;
             display: flex;
             justify-content: center;
             align-items: center;
             perspective: 1000px;
-            margin-top: 100px; /* Moved down to avoid overlapping heading */
+            margin-top: 100px;
         }
         .hub {
             position: absolute;
@@ -165,7 +165,7 @@
             text-align: center;
             transition: all 0.3s;
             transform-origin: center;
-            animation: orbit 30s linear infinite;
+            animation: orbit 60s linear infinite; /* Changed from 30s to 60s for slower rotation */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
@@ -221,8 +221,8 @@
 
         /* Positioning Sub-Modules in a Circle */
         .sub-module:nth-child(1) { transform: translate(300px, 0) rotate(0deg); animation-delay: 0s; }
-        .sub-module:nth-child(2) { transform: translate(0, 300px) rotate(120deg); animation-delay: -10s; }
-        .sub-module:nth-child(3) { transform: translate(-300px, 0) rotate(240deg); animation-delay: -20s; }
+        .sub-module:nth-child(2) { transform: translate(0, 300px) rotate(120deg); animation-delay: -20s; } /* Adjusted delay */
+        .sub-module:nth-child(3) { transform: translate(-300px, 0) rotate(240deg); animation-delay: -40s; } /* Adjusted delay */
 
         /* Tooltip for Key Terms */
         .tooltip {
